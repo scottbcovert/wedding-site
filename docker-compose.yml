@@ -1,0 +1,9 @@
+web:
+  build: .
+  ports:
+   - "8080:8080"
+   - "35729:35729"
+  volumes:
+   - "./app:/home/app"
+  environment: 
+   NODE_ENV: dev
