@@ -1,0 +1,19 @@
+<div flex id="content" layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+	
+	<md-subheader class="md-primary">Our Story</md-subheader>
+
+	<timeline class="story-content">
+	    <timeline-event ng-repeat="event in sc.events">
+	      <timeline-badge class="{{event.badgeClass}} hidden" when-visible="sc.animateElementIn" when-not-visible="sc.animateElementOut">
+	        <i class="material-icons vmiddle">{{event.badgeIcon}}</i>
+	      </timeline-badge>
+	      <timeline-panel class="{{event.badgeClass}} hidden" when-visible="sc.animateElementIn" when-not-visible="sc.animateElementOut">
+	        <timeline-heading>
+	          <h4>{{event.title}}</h4>
+	        </timeline-heading>
+	        <p>{{event.content}}</p>
+	      </timeline-panel>
+	    </timeline-event>
+	</timeline>	
+
+</div>

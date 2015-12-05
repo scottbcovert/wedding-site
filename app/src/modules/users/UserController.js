@@ -64,8 +64,8 @@
         var user = self.selected;
 
         return $mdBottomSheet.show({
-          parent: angular.element(document.getElementById('content')),
-          templateUrl: './src/users/view/contactSheet.html',
+          parent: angular.element(document.getElementById('body')),
+          templateUrl: './src/modules/users/views/contactSheet.html',
           controller: [ '$mdBottomSheet', ContactPanelController],
           controllerAs: "cp",
           bindToController : true,
