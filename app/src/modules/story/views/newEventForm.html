@@ -1,0 +1,21 @@
+<md-dialog aria-label="Form" class="md-inline-form">
+	<md-content class="md-padding" layout-padding>
+		<form name="eventForm">
+			<div layout layout-sm="column">
+				<md-input-container flex> <label>Event Name</label> <input ng-model="dc.newEvent.name"> </md-input-container> 
+				<md-datepicker ng-model="dc.newEvent.date" md-placeholder="Event Date"></md-datepicker> 
+			</div> 
+			<div layout="row" layout-sm="column" class="layout-sm-column layout-row"> 
+				<md-input-container flex> <label>Description</label> <textarea ng-model="dc.newEvent.description" columns="1" md-maxlength="150"></textarea> </md-input-container> 
+			</div> 
+			<div layout="row" layout-sm="column" class="layout-sm-column layout-row"> 
+				<input filepicker type="filepicker-dragdrop" data-fp-services="computer,facebook,instagram,url,box,GOOGLE_DRIVE,picasa,convert,webcam,video" on-success="dc.setUrl(event.fpfile.url)" data-fp-button-class="md-button md-raised md-ink-ripple" data-fp-drag-class="md-button event-drag-drop" data-fp-button-text="Attach Photo/Video" data-fp-drag-text="Or Drag/Drop File Here" />
+			</div> 
+		</form> 
+	</md-content> 
+	<md-dialog-actions layout="row"> 
+		<span flex></span> 
+		<md-button ng-click="dc.cancel()" class="md-raised md-ink-ripple"> Cancel </md-button> 
+		<md-button ng-click="dc.save()" class="md-raised md-ink-ripple md-primary"> Save </md-button> 
+	</md-dialog-actions>
+</md-dialog>

@@ -10,10 +10,16 @@
 	z-index: 150;
 }
 
-md-datepicker {
-	
+.timeline li timeline-badge {
+	z-index: 50;
 }
 
 .md-datepicker-calendar-pane.md-pane-open {
 	z-index: 250;
+}
+
+.event-drag-drop {
+	padding: 6px 4px !important;
+	white-space: normal;
+	text-transform: none;
 }

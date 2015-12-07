@@ -25,7 +25,7 @@
 		    $mdDialog.show({
 		      controller: DialogController,
 		      controllerAs: 'dc',
-		      template: '<md-dialog aria-label="Form" class="md-inline-form"> <md-content class="md-padding" layout-padding> <form name="eventForm"> <div layout layout-sm="column"> <md-input-container flex> <label>Event Name</label> <input ng-model="dc.event.name"> </md-input-container> <md-datepicker ng-model="dc.event.date" md-placeholder="Event Date"></md-datepicker> </div> <div layout="row" layout-sm="column" class="layout-sm-column layout-row"> <md-input-container flex> <label>Description</label> <textarea ng-model="dc.event.description" columns="1" md-maxlength="150"></textarea> </md-input-container> </div> </form> </md-content> <md-dialog-actions layout="row"> <span flex></span> <md-button ng-click="dc.cancel()"> Cancel </md-button> <md-button ng-click="dc.save()" class="md-primary"> Save </md-button> </md-dialog-actions></md-dialog>',
+		      templateUrl: './src/modules/story/views/newEventForm.html',
 		      targetEvent: $event,
 		      clickOutsideToClose: true
 		    });		    
@@ -36,20 +36,26 @@
 	     */
 	    DialogController = function($mdDialog) {
 	      
-	      var cancel = function() {
-		        $mdDialog.cancel();
-		        console.log('Canceled!');
+	      var newEvent = {},
+
+	      	  cancel = function() {	      	  	
+		        $mdDialog.cancel();		        
 		      },
 
 		      save = function() {
-		        // Save
+		        console.log(newEvent);
 		        $mdDialog.cancel();
-		        console.log('Saved!');
+		      },
+
+		      setUrl = function(fileUrl) {
+		      	newEvent.url = fileUrl;
 		      },
 
 		      self = this;
+		      self.newEvent = newEvent;
 		      self.cancel = cancel;
 		      self.save = save;
+		      self.setUrl = setUrl;
 	    },
     
     	self = this;
