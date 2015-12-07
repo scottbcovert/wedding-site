@@ -2,6 +2,10 @@
 	
 	<md-subheader class="md-primary">Our Story</md-subheader>
 
+	<div data-ng-controller="NewEventController as nec">
+	    <mfb-menu main-action="nec.newEventDialog($event)" position="br" effect="slidein" label="New Event" active-icon="add" resting-icon="event" toggling-method="hover" template-url="./src/modules/story/views/mfb-menu.html"></mfb-menu>
+	</div>
+
 	<timeline class="story-content">
 	    <timeline-event ng-repeat="event in sc.events">
 	      <timeline-badge class="{{event.badgeClass}} hidden" when-visible="sc.animateElementIn" when-not-visible="sc.animateElementOut">
@@ -10,8 +14,17 @@
 	      <timeline-panel class="{{event.badgeClass}} hidden" when-visible="sc.animateElementIn" when-not-visible="sc.animateElementOut">
 	        <timeline-heading>
 	          <h4>{{event.title}}</h4>
+	          <p ng-if="event.when">
+	            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{event.when}}</small>
+	          </p>
+	          <p ng-if="event.titleContentHtml" ng-bind-html="event.titleContentHtml">
+	          </p>	
 	        </timeline-heading>
 	        <p>{{event.content}}</p>
+	        <p ng-if="event.contentHtml" ng-bind-html="event.contentHtml"></p>
+	        <timeline-footer ng-if="event.footerContentHtml">
+	          <span ng-bind-html="event.footerContentHtml"></span>
+	        </timeline-footer>	        
 	      </timeline-panel>
 	    </timeline-event>
 	</timeline>	

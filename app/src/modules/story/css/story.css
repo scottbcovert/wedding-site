@@ -5,3 +5,15 @@
 .vmiddle {
 	vertical-align: middle;
 }
+
+.md-dialog-container {
+	z-index: 150;
+}
+
+md-datepicker {
+	
+}
+
+.md-datepicker-calendar-pane.md-pane-open {
+	z-index: 250;
+}

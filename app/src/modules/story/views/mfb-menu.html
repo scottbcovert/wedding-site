@@ -1,0 +1,11 @@
+<ul class="mfb-component--{{position}} mfb-{{effect}}" data-mfb-toggle="{{togglingMethod}}" data-mfb-state="{{menuState}}">
+  <li class="mfb-component__wrap">
+        <a ng-click="clicked()" ng-mouseenter="hovered()" ng-mouseleave="hovered()" style="background: transparent; box-shadow: none;" ng-attr-data-mfb-label="{{label}}" class="mfb-component__button--main">
+              <md-button class="md-fab md-accent" aria-label={{label}} style="position:relative; margin: 0; padding:0;">
+                    <md-icon style="left: 0; position: relative;" md-svg-icon="{{resting}}" class="mfb-component__main-icon--resting"></md-icon>
+                    <md-icon style="position:relative;" md-svg-icon="{{active}}" class="mfb-component__main-icon--active"></md-icon>
+              </md-button>
+        </a>
+        <ul class="mfb-component__list" ng-transclude></ul>
+  </li>
+</ul>
