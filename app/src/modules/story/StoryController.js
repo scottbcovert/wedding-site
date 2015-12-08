@@ -3,6 +3,7 @@
   angular
        .module('story')
        .controller('StoryController', [
+          '$firebaseArray',
           StoryController
        ]);
 
@@ -10,108 +11,60 @@
    * Story Controller
    * @constructor
    */
-  function StoryController() {
-    var self = this;   
+  function StoryController($firebaseArray) {
+    var eventRef = new Firebase(FIREBASE_URL+'events'),
 
-    var lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. " +
-		          "Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor." +
-		          "Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, " +
-		          "ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor." +
-		          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+  		eventList = $firebaseArray(eventRef),
 
-    self.events = [
-    	{
-		    badgeClass: 'info',
-		    badgeIcon: 'question_answer',
-		    title: 'First heading',
-		    content: 'Some awesome content.'
-	  	}, 
-	  	{
-		    badgeClass: 'warning',
-		    badgeIcon: 'favorite',
-		    title: 'Second heading',
-		    content: 'More awesome content.'
+  		animateElementIn = function($el) {
+		    $el.removeClass('hidden');
+		    $el.addClass('animated bounce-in'); // this example leverages animate.css classes
 	  	},
-	  	{
-	  		badgeClass: 'default',
-			badgeIcon: 'image',
-			title: 'Third heading',
-			titleContentHtml: '<img class="img-responsive" src="http://www.freeimages.com/assets/183333/1833326510/wood-weel-1444183-m.jpg">',
-			contentHtml: lorem,
-			footerContentHtml: '<a href="">Continue Reading</a>'
-	  	},
-	  	{
-		    badgeClass: 'info',
-		    badgeIcon: 'question_answer',
-		    title: 'First heading',
-		    content: 'Some awesome content.'
-	  	}, 
-	  	{
-		    badgeClass: 'warning',
-		    badgeIcon: 'favorite',
-		    title: 'Second heading',
-		    content: 'More awesome content.'
-	  	},
-	  	{
-		    badgeClass: 'info',
-		    badgeIcon: 'question_answer',
-		    title: 'First heading',
-		    content: 'Some awesome content.'
-	  	}, 
-	  	{
-		    badgeClass: 'warning',
-		    badgeIcon: 'favorite',
-		    title: 'Second heading',
-		    content: 'More awesome content.'
-	  	},
-	  	{
-		    badgeClass: 'info',
-		    badgeIcon: 'question_answer',
-		    title: 'First heading',
-		    content: 'Some awesome content.'
-	  	}, 
-	  	{
-		    badgeClass: 'warning',
-		    badgeIcon: 'favorite',
-		    title: 'Second heading',
-		    content: 'More awesome content.'
-	  	},
-	  	{
-		    badgeClass: 'info',
-		    badgeIcon: 'question_answer',
-		    title: 'First heading',
-		    content: 'Some awesome content.'
-	  	}, 
-	  	{
-		    badgeClass: 'warning',
-		    badgeIcon: 'favorite',
-		    title: 'Second heading',
-		    content: 'More awesome content.'
-	  	},
-	  	{
-		    badgeClass: 'info',
-		    badgeIcon: 'question_answer',
-		    title: 'First heading',
-		    content: 'Some awesome content.'
-	  	}, 
-	  	{
-		    badgeClass: 'warning',
-		    badgeIcon: 'favorite',
-		    title: 'Second heading',
-		    content: 'More awesome content.'
-	  	}
-	];     
 
-	self.animateElementIn = function($el) {
-	    $el.removeClass('hidden');
-	    $el.addClass('animated bounce-in'); // this example leverages animate.css classes
-  	};
+	  	animateElementOut = function($el) {
+		    $el.addClass('hidden');
+		    $el.removeClass('animated bounce-in'); // this example leverages animate.css classes
+	  	},
 
-  	self.animateElementOut = function($el) {
-	    $el.addClass('hidden');
-	    $el.removeClass('animated bounce-in'); // this example leverages animate.css classes
-  	};
+	  	compare = function(a,b) {
+			return new Date(a.date).getTime() - new Date(b.date).getTime();
+	  	},
 
+	  	isEven = function(n) {
+		   return n % 2 == 0;
+		};
+
+	  	self = this;
+    	self.animateElementIn = animateElementIn;
+    	self.animateElementOut = animateElementOut;     	
+
+    	eventList.$watch(function() { 
+	  		eventList.sort(compare);
+	  		var ctr = 0,
+	  			events = [];
+	  		eventList.forEach(function(e){
+	  			var timelineEvent = {
+	  				title: e.name,
+	  				content: e.description,
+	  				when: new Date(e.date).toLocaleDateString("en-US")
+	  			};
+	  			// Add photo
+	  			if (e.url){
+	  				timelineEvent.titleContentHtml = '<img class="img-response" src="' + e.url + '"/>';
+	  			}
+	  			if (isEven(ctr)){
+	  				timelineEvent.badgeClass = 'danger';
+	  				timelineEvent.badgeIcon = 'favorite';
+	  			}
+	  			else{
+	  				timelineEvent.badgeClass = 'info';
+	  				timelineEvent.badgeIcon = 'local_florist';
+	  			}
+	  			events.push(timelineEvent);
+	  			ctr++;
+	  		})
+	  		self.events = events;
+	  	});
   }
 
 })();

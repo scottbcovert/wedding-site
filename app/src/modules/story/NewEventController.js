@@ -4,6 +4,7 @@
        .module('story')
        .controller('NewEventController', [
           '$mdDialog', 
+          '$firebaseArray',
           NewEventController
        ]);
 
@@ -11,9 +12,12 @@
    * New Event Controller
    * @constructor
    */
-  function NewEventController($mdDialog) {
+  function NewEventController($mdDialog,$firebaseArray) {
+  	var eventRef = new Firebase(FIREBASE_URL+'events'),
+
+  		eventList = $firebaseArray(eventRef),
   	
-  	var errorAlert = function(errorMessage) {
+  		errorAlert = function(errorMessage) {
 	        return $mdDialog.alert()
 	          .title('Oops!')
 	          .content(errorMessage)
@@ -43,7 +47,12 @@
 		      },
 
 		      save = function() {
-		        console.log(newEvent);
+		      	eventList.$add({
+		        	name: newEvent.name,
+		        	description: newEvent.description,
+		        	date: newEvent.date ? newEvent.date.toString() : null,
+		        	url: newEvent.url ? newEvent.url : null
+		        });
 		        $mdDialog.cancel();
 		      },
 

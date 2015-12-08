@@ -6,6 +6,10 @@
 	vertical-align: middle;
 }
 
+.grey-icon {
+	color: slategrey;
+}
+
 .md-dialog-container {
 	z-index: 150;
 }
