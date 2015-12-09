@@ -8,6 +8,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Montez'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Prata'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -52,15 +54,56 @@
     </md-sidenav>-->
 
     <!-- Toolbar -->
-    <md-toolbar md-scroll-shrink class="md-medium-tall" layout="row" class="md-whiteframe-z1">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
-        <md-icon md-svg-icon="menu" ></md-icon>
-      </md-button>
-      <h1>Tam &#x2764; Covert Wedding</h1>
+    <md-toolbar layout="column" class="abstract-background">
+        <span class="md-toolbar-tools-spacer"></span>
+        <div class="md-toolbar-tools md-toolbar-header" layout-align="center center">          
+          <h1>
+            Lauren &amp; Scott's Wedding
+          </h1>                                                
+        </div>
+        <div class="md-toolbar-tools md-toolbar-header" layout-align="center center">
+          <h1>
+          &#x2764;
+          </h1>          
+        </div>
+        <div class="md-toolbar-tools md-toolbar-header" layout-align="center center">
+          <h1>
+          May 7, 2016
+          </h1>   
+        </div>
+        <md-tabs md-center-tabs="true" class="md-primary" md-selected="selectedIndex">
+          <md-tab id="home">
+            <a class="md-tab-link" href="#/">Home</a>
+          </md-tab>
+          <md-tab id="our_story">
+            <a class="md-tab-link" href="#/story">Our Story</a>
+          </md-tab>
+          <md-tab id="ceremony">
+            <a class="md-tab-link" href="#/ceremony">Ceremony</a>
+          </md-tab>
+          <md-tab id="reception">
+            <a class="md-tab-link" href="#/reception">Reception</a>
+          </md-tab>
+          <md-tab id="accommodations">
+            <a class="md-tab-link" href="#/accommodations">Accommodations</a>
+          </md-tab>
+          <md-tab id="wedding_party">
+            <a class="md-tab-link" href="#/weddingparty">Wedding Party</a>
+          </md-tab>
+          <md-tab id="registry">
+            <a class="md-tab-link" href="#/registry">Registry</a>
+          </md-tab>
+          <md-tab id="guestbook">
+            <a class="md-tab-link" href="#/guestbook">Guestbook</a>
+          </md-tab>
+          <md-tab id="hashtag">
+            <a class="md-tab-link" href="#/hashtag">#CovertOperation</a>
+          </md-tab>
+        </md-tabs>
     </md-toolbar>
 
     <!-- Content -->
-    <md-content ui-view></md-content>
+    <md-content class="main-background" layout-fill ui-view></md-content>
     
     <script>document.write('<script src="http://'
       + (location.host || 'localhost').split(':')[0]

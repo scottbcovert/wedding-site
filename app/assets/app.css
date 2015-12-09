@@ -1,6 +1,48 @@
+/* Custom Styling */
+
+.main-background {
+  background: url('./images/bg-pattern.png');
+  background-size: 20%
+}
+
+md-toolbar.abstract-background {
+  background: url('./images/abstract-pattern.png');
+  /* #2ba3d4 = Complementary Blue */
+  /* #29c2f4 = Light Blue from BG Pattern */
+  color: white;
+}
+
+
+md-tabs-canvas {
+  background: url('./images/abstract-pattern.png');
+}
+
+md-tabs-canvas a {
+   font-weight: bold;
+}
+
+.md-toolbar-tools-spacer {
+  display: flex;
+  height: 32px;
+}
+
+.md-toolbar-header h1 {
+  font-size: 2.5em;
+  font-family: 'Montez', 'Roboto', sans-serif;
+}
+
+a.md-tab-link {
+  text-decoration: none !important;
+  color: white;
+  height:100%;
+  width:100%;
+}
+
+/* End Custom Styling */
+
 html, body {
-  font-family: 'Roboto', sans-serif;
-  font-size:14px;
+  font-family: 'Prata', 'Roboto', sans-serif;
+  font-size: large;
   height:100%;
   margin: 0px;
   padding: 0px;
