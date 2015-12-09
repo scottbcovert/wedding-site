@@ -1,0 +1,18 @@
+<div flex id="content" layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+	
+	<md-subheader class="md-primary">Guestbook</md-subheader>
+
+	<div data-ng-controller="NewPostController as npc">
+	    <mfb-menu main-action="npc.newPostDialog($event)" position="br" effect="slidein" label="New Post" active-icon="create" resting-icon="add" toggling-method="hover" template-url="./src/modules/guestbook/views/mfb-menu.html"></mfb-menu>
+	</div>
+
+	<md-grid-list md-cols-gt-md="6" md-cols-md="2" md-cols-sm="1" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-sm="4px" md-gutter="8px">
+      <md-grid-tile class="guestbook-post" ng-repeat="post in gc.posts" ng-style="{'background': post.color}" md-colspan-gt-sm="{{post.colspan}}" md-rowspan-gt-sm="{{post.rowspan}}">
+	      <md-grid-tile-header><h1>{{post.title}}</h1></md-grid-tile-header>
+		  <div class="post-message">{{post.message}}</div>
+	      <div ng-if="post.image" ng-bind-html="post.image"></div>	
+	      <md-grid-tile-footer><h2>{{post.author}}</h2></md-grid-tile-footer>
+      </md-grid-tile>
+    </md-grid-list>	
+
+</div>
