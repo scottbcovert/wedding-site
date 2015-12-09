@@ -1,0 +1,144 @@
+/* Toolbar Background */
+
+Generated via http://bg.siteorigin.com/
+
+Settings = {
+	Background-color: #002a4d,
+	Filter: 45degree Fabric,
+	Blend Mode: Blend,
+	Pattern Intensity: 30%,
+	Noise: 0%,
+	Invert Pattern: false,
+	Generate @2X: true
+}
+
+/* SVG Icon Background */
+
+Generated via http://www.kennethcachia.com/plain-pattern/
+
+Icons sourced from http://www.flaticon.com/ & designed by Freepik
+
+Settings = {
+	Width: 800,
+	Height: 369,
+	Background-color: rgb(41, 194, 244)
+	Icons: [
+		{
+			svg: birds11.svg,
+			seamless-shape: true,
+			rotation: 22,
+			scale: 0.2,
+			stroke-size: 2,
+			fill-color: white,
+			stroke-color: none,
+		},
+		{
+			svg: champagne7.svg,
+			seamless-shape: true,
+			rotation: -23,
+			scale: 0.2,
+			stroke-size: 2,
+			fill-color: white,
+			stroke-color: none,
+		},
+		{
+			svg: heart365.svg,
+			seamless-shape: true,
+			rotation: 7,
+			scale: 0.1,
+			stroke-size: 2,
+			fill-color: white,
+			stroke-color: none,
+		},
+		{
+			svg: chicken18.svg,
+			seamless-shape: true,
+			rotation: 0,
+			scale: 0.2,
+			stroke-size: 2,
+			fill-color: white,
+			stroke-color: none,
+		},
+		{
+			svg: balloon11.svg,
+			seamless-shape: true,
+			rotation: 0,
+			scale: 0.2,
+			stroke-size: 2,
+			fill-color: white,
+			stroke-color: none,
+		},
+		{
+			svg: paper-plane.svg,
+			seamless-shape: true,
+			rotation: 16,
+			scale: 0.1,
+			stroke-size: 2,
+			fill-color: white,
+			stroke-color: none,
+		},
+		{
+			svg: heart311.svg,
+			seamless-shape: true,
+			rotation: 0,
+			scale: 0.2,
+			stroke-size: 2,
+			fill-color: white,
+			stroke-color: none,
+		},
+		{
+			svg: hearts10.svg,
+			seamless-shape: true,
+			rotation: 27,
+			scale: 0.2,
+			stroke-size: 2,
+			fill-color: white,
+			stroke-color: none,
+		},
+		{
+			svg: thimble.svg,
+			seamless-shape: true,
+			rotation: 25,
+			scale: 1.1,
+			stroke-size: 2,
+			fill-color: none,
+			stroke-color: white,
+		},
+		{
+			svg: bunch1.svg,
+			seamless-shape: true,
+			rotation: -25,
+			scale: 0.2,
+			stroke-size: 2,
+			fill-color: white,
+			stroke-color: none,
+		},
+		{
+			svg: fruit199.svg,
+			seamless-shape: true,
+			rotation: 13,
+			scale: 0.2,
+			stroke-size: 2,
+			fill-color: white,
+			stroke-color: none,
+		},
+		{
+			svg: chicken19.svg,
+			seamless-shape: true,
+			rotation: 0,
+			scale: 0.2,
+			stroke-size: 2,
+			fill-color: white,
+			stroke-color: none,
+		},
+		{
+			svg: ring34.svg,
+			seamless-shape: true,
+			rotation: 0,
+			scale: 0.2,
+			stroke-size: 2,
+			fill-color: white,
+			stroke-color: none,
+		}	
+	]
+}
