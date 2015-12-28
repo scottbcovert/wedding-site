@@ -17,7 +17,7 @@
                     .when('#/registry', 'registry')
                     .when('#/guestbook', 'guestbook')
                     .when('#/hashtag', 'hashtag')
-                    .otherwise('home');    
+                    .otherwise('/');    
                 
                 // States
                 $stateProvider
