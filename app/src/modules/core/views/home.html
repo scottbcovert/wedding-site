@@ -1,5 +1,11 @@
 <div flex id="content" layout="column" tabIndex="-1" role="main">
-
-  Home
+<!--<md-whiteframe class="md-whiteframe-24dp margin-20 text-center">
+    <h3>.md-whiteframe-z2</h3>
+</md-whiteframe>-->
+<ks-swiper-container override-parameters="{'effect':'coverflow','observer':'true','preloadImages':'false','lazyLoading':'true'}" autoplay="2500" pagination-is-active="true" pagination-clickable="true" slides-per-view="3">
+    <ks-swiper-slide class="swiper-slide" ng-repeat="p in hc.pics">        
+        <img class="img-response" ng-src="{{p.imageUrl}}">        
+    </ks-swiper-slide>
+</ks-swiper-container>
   
 </div>

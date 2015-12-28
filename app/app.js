@@ -1,23 +1,28 @@
 angular
-    .module('core', ['ui.router', 'ngMaterial', 'story', 'guestbook', 'users'])
+    .module('core', ['ui.router', 'ngMaterial', 'home', 'story', 'guestbook', 'users'])
         .config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', '$mdIconProvider', 
             function($stateProvider, $urlRouterProvider, $mdThemingProvider, $mdIconProvider){
 
                 // Router
                 $urlRouterProvider
-                    .when('users', '/users')
-                    .when('story', '/story')
-                    .when('guestbook', '/guestbook')
-                    .when('home', '/')
-                    .otherwise('/guestbook');    
+                    .when('#/home', 'home')
+                    .when('#/story', 'story')
+                    .when('#/ceremony', 'ceremony')
+                    .when('#/reception', 'reception')
+                    .when('#/accommodations', 'accommodations')
+                    .when('#/weddingparty', 'weddingparty')
+                    .when('#/registry', 'registry')
+                    .when('#/guestbook', 'guestbook')
+                    .when('#/hashtag', 'hashtag')
+                    .otherwise('/');    
                 
                 // States
                 $stateProvider
-                    .state('users', {
-                        url: '/users',
-                        templateUrl: './src/modules/users/views/user.html',
-                        controller: 'UserController',
-                        controllerAs: 'ul'
+                    .state('home', {
+                        url: '/',
+                        templateUrl: './src/modules/core/views/home.html',
+                        controller: 'HomeController',
+                        controllerAs: 'hc'                        
                     })
                     .state('story', {
                         url: '/story',
@@ -30,10 +35,6 @@ angular
                         templateUrl: './src/modules/guestbook/views/guestbook.html',
                         controller: 'GuestbookController',
                         controllerAs: 'gc'
-                    })
-                    .state('home', {
-                        url: '/',
-                        templateUrl: './src/modules/core/views/home.html',                        
                     });
 
                 $mdIconProvider
