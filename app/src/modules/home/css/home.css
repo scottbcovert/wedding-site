@@ -1,0 +1,41 @@
+/* Ribbon Countdown Styling */
+
+.ribbon-container > .ribbon.ribbon_yellow {
+      z-index: 2;
+      border-top: 2px solid yellow;
+      border-bottom: 2px solid yellow;
+      color: yellow; }
+      .ribbon-container > .ribbon.ribbon_yellow::after {
+        border-color: yellow; }
+      .ribbon-container > .ribbon.ribbon_yellow::before {
+        border-color: yellow; }
+      .ribbon-container > .ribbon.ribbon_yellow > a {
+        color: yellow; }
+
+.ribbon-container > .ribbon.ribbon_hidden {
+      display: none; }
+
+/* Picture Gallery Styling */
+
+ks-swiper-container {
+	margin-top: 10px;
+}
+
+.swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide>img {
+  height:500px !important;
+}

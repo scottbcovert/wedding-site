@@ -1,8 +1,11 @@
-angular
-    .module('core', ['ui.router', 'ngMaterial', 'home', 'story', 'guestbook', 'users'])
+(function(){
+  'use strict';
+
+    angular
+        .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'home', 'story', 'guestbook', 'users'])
         .config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', '$mdIconProvider', 
             function($stateProvider, $urlRouterProvider, $mdThemingProvider, $mdIconProvider){
-
+                
                 // Router
                 $urlRouterProvider
                     .when('#/home', 'home')
@@ -20,7 +23,7 @@ angular
                 $stateProvider
                     .state('home', {
                         url: '/',
-                        templateUrl: './src/modules/core/views/home.html',
+                        templateUrl: './src/modules/home/views/home.html',
                         controller: 'HomeController',
                         controllerAs: 'hc'                        
                     })
@@ -73,3 +76,5 @@ angular
 
             }
         ]);
+
+})();
