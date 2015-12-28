@@ -3,12 +3,9 @@
 /* Page Card Header Styling */
 
 md-whiteframe {
+  margin: 18px !important;
   background: #fff !important;
   text-align: center !important;
-}
-
-.margin-20 {
-  margin: 20px !important;
 }
 
 /* Background Styling */

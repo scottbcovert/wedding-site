@@ -2,7 +2,7 @@
   'use strict';
 
     angular
-        .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'home', 'story', 'guestbook', 'users'])
+        .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'home', 'story', 'registry', 'guestbook'])
         .config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', '$mdIconProvider', 
             function($stateProvider, $urlRouterProvider, $mdThemingProvider, $mdIconProvider){
                 
@@ -17,7 +17,7 @@
                     .when('#/registry', 'registry')
                     .when('#/guestbook', 'guestbook')
                     .when('#/hashtag', 'hashtag')
-                    .otherwise('/');    
+                    .otherwise('home');    
                 
                 // States
                 $stateProvider
@@ -32,6 +32,12 @@
                         templateUrl: './src/modules/story/views/story.html',
                         controller: 'StoryController',
                         controllerAs: 'sc'
+                    })
+                    .state('registry', {
+                        url: '/registry',
+                        templateUrl: './src/modules/registry/views/registry.html',
+                        controller: 'RegistryController',
+                        controllerAs: 'rc'
                     })
                     .state('guestbook', {
                         url: '/guestbook',
