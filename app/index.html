@@ -8,22 +8,28 @@
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
+    <!-- Fonts -->
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Montez'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Prata'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <!-- Angular & Material -->
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
     <link rel="stylesheet" href="./bower_components/angular-timeline/dist/angular-timeline.css"/>
     <link rel="stylesheet" href="./bower_components/angular-timeline/dist/angular-timeline-animations.css"/>
+    <!-- Dependencies -->
     <link rel="stylesheet" href="./bower_components/ng-material-floating-button/mfb/dist/mfb.css"/>
     <link rel="stylesheet" href="./bower_components/swiper/dist/css/swiper.css"/>
     <link rel="stylesheet" href="./bower_components/ng-countdown-ribbon/dist/ng-countdown-ribbon.min.css"/>
+    <!-- Home -->
     <link rel="stylesheet" href="./src/modules/home/css/home.css"/>
+    <!-- Story -->
     <link rel="stylesheet" href="./src/modules/story/css/story.css"/>
+    <!-- Guestbook -->
     <link rel="stylesheet" href="./src/modules/guestbook/css/guestbook.css"/>
+    <!-- Core -->
     <link rel="stylesheet" href="assets/app.css"/>
-
     <style type="text/css">
         /**
          * Hide when Angular is not yet loaded and initialized
@@ -36,25 +42,6 @@
   </head>
 
   <body ng-app="core" ng-cloak id="body">
-
-    <!--<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
-              md-component-id="left"
-              md-is-locked-open="$mdMedia('gt-sm')">
-
-      <md-toolbar class="md-whiteframe-z1">
-        <h1>&#x2764;</h1>
-      </md-toolbar>
-
-      <md-list>
-        <md-list-item ng-repeat="it in ul.users">
-            <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-              <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-              {{it.name}}
-            </md-button>
-        </md-list-item>
-      </md-list>
-
-    </md-sidenav>-->
 
     <!-- Toolbar -->
     <md-toolbar layout="column" class="abstract-background">
@@ -77,20 +64,22 @@
     <!-- Content -->
     <md-content class="main-background" layout-fill ui-view></md-content>
     
+    <!-- Javascript -->
     <script>document.write('<script src="http://'
       + (location.host || 'localhost').split(':')[0]
       + ':35729/livereload.js?snipver=1"></'
       + 'script>')</script>
-
     <script src="./config/env/local.js"></script>
-
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Angular & Material -->
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script src="./bower_components/angular-material/angular-material.js"></script>
     <script src="./bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="./bower_components/angular-sanitize/angular-sanitize.js"></script>
-
+    <!-- Dependencies -->
     <script src="./bower_components/angular-timeline/dist/angular-timeline.js"></script>
     <script src="./bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
     <script src="./bower_components/ng-material-floating-button/src/mfb-directive.js"></script>
@@ -101,22 +90,21 @@
     <script src="./bower_components/swiper/dist/js/swiper.js"></script>
     <script src="./bower_components/angular-swiper/dist/angular-swiper.js"></script>
     <script src="./bower_components/ng-countdown-ribbon/dist/ng-countdown-ribbon.min.js"></script>
-
+    <!-- Home -->
     <script src="./src/modules/home/Home.js"></script>
     <script src="./src/modules/home/HomeController.js"></script>
-    
+    <!-- Story -->
     <script src="./src/modules/story/Story.js"></script>
     <script src="./src/modules/story/StoryController.js"></script>
     <script src="./src/modules/story/NewEventController.js"></script>
-
+    <!-- Registry -->
+    <script src="./src/modules/registry/Registry.js"></script>
+    <script src="./src/modules/registry/RegistryController.js"></script>
+    <!-- Guestbook -->
     <script src="./src/modules/guestbook/Guestbook.js"></script>
     <script src="./src/modules/guestbook/GuestbookController.js"></script>
-    <script src="./src/modules/guestbook/NewPostController.js"></script>
-
-    <script src="./src/modules/users/Users.js"></script>
-    <script src="./src/modules/users/UserController.js"></script>
-    <script src="./src/modules/users/UserService.js"></script>
-
+    <script src="./src/modules/guestbook/NewPostController.js"></script>    
+    <!-- Core -->
     <script src="./app.js"></script>
 
   </body>
