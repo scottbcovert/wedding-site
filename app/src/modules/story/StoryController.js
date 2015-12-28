@@ -4,6 +4,7 @@
        .module('story')
        .controller('StoryController', [
           '$firebaseArray',
+          '$mdToast',
           StoryController
        ]);
 
@@ -11,7 +12,16 @@
    * Story Controller
    * @constructor
    */
-  function StoryController($firebaseArray) {
+  function StoryController($firebaseArray,$mdToast) {
+    
+    // Display toast to user
+    var storyToast = $mdToast.simple()
+    					.capsule(true)
+    					.position('bottom right')
+    					.textContent('Help build our story by adding new events!');    
+    $mdToast.show(storyToast);
+    
+    // Initialize event list
     var eventRef = new Firebase(FIREBASE_URL+'events'),
 
   		eventList = $firebaseArray(eventRef),

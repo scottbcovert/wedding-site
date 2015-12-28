@@ -1,3 +1,11 @@
+/* Toast Styling */
+
+md-toast {
+	margin-bottom: 100px;
+}
+
+/* Timeline Styling */
+
 .hidden {
   visibility: hidden;
 }
@@ -17,6 +25,8 @@
 .timeline li timeline-badge {
 	z-index: 50;
 }
+
+/* New Event Styling */
 
 .md-datepicker-calendar-pane.md-pane-open {
 	z-index: 250;
