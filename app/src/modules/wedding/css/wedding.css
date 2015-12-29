@@ -1,0 +1,21 @@
+.margin-top-10 {
+	margin-top: 10px;
+}
+
+.md-card-image {
+	max-width: 100% !important;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.travel-card-image {
+	height: 400px !important;	
+}
+
+.bio-card-image {
+	height: 400px !important;
+}
+
+.md-tab-content-image {
+	width: 50% !important;
+}

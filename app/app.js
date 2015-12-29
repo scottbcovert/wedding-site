@@ -2,7 +2,7 @@
   'use strict';
 
     angular
-        .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'home', 'story', 'registry', 'guestbook'])
+        .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'home', 'story', 'wedding', 'registry', 'guestbook'])
         .config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', '$mdIconProvider', 
             function($stateProvider, $urlRouterProvider, $mdThemingProvider, $mdIconProvider){
                 
@@ -32,6 +32,12 @@
                         templateUrl: './src/modules/story/views/story.html',
                         controller: 'StoryController',
                         controllerAs: 'sc'
+                    })
+                    .state('wedding', {
+                        url: '/wedding',
+                        templateUrl: './src/modules/wedding/views/wedding.html',
+                        controller: 'WeddingController',
+                        controllerAs: 'wc'
                     })
                     .state('registry', {
                         url: '/registry',

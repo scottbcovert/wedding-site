@@ -24,11 +24,11 @@ md-toolbar.abstract-background {
   color: white;
 }
 
-md-tabs-canvas {
+md-toolbar md-tabs-canvas {
   background: url('./images/abstract-pattern.png');
 }
 
-md-tabs-canvas a {
+md-toolbar  md-tabs-canvas a {
    font-weight: bold;
 }
 
@@ -42,7 +42,7 @@ md-tabs-canvas a {
   font-family: 'Montez', 'Roboto', sans-serif;
 }
 
-md-tab-item>span{
+md-toolbar md-tab-item>span{
   color: white;
   font-weight: bold;
 }
