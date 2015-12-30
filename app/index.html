@@ -46,20 +46,15 @@
   <body ng-app="core" ng-cloak id="body">
 
     <!-- Toolbar -->
-    <md-toolbar layout="column" class="abstract-background">
+    <md-toolbar ng-controller="CoreController as cc" layout="column" class="abstract-background">
         <span class="md-toolbar-tools-spacer"></span>
         <div class="md-toolbar-tools md-toolbar-header" layout-align="center center">          
-          <h1>
-            Lauren &amp; Scott &#x2764; May 7, 2016
-          </h1>                                                
+          <h1>{{cc.mainHeader}}</h1>                      
         </div>      
-        <md-tabs md-center-tabs="true" class="md-primary" md-selected="selectedIndex">
-          <md-tab id="home" class="md-tab-label" ui-sref="home">Home</md-tab>
-          <md-tab id="our_story" class="md-tab-label" ui-sref="story">Our Story</md-tab>
-          <md-tab id="ceremony" class="md-tab-label" ui-sref="wedding">Wedding</md-tab>
-          <md-tab id="registry" class="md-tab-label" ui-sref="registry">Registry</md-tab>
-          <md-tab id="guestbook" class="md-tab-label" ui-sref="guestbook">Guestbook</md-tab>           
-          <md-tab id="hashtag" class="md-tab-label" ui-sref="hashtag">HASHTAG</md-tab>
+        <md-tabs md-center-tabs="true" class="md-primary" md-selected="cc.currentTab">
+          <md-tab ng-repeat="navTab in cc.navTabs" id="{{navTab.id}}" class="md-tab-label" ui-sref="{{navTab.uisref}}">
+            <md-tab-label>{{navTab.label}}</md-tab-label>
+          </md-tab>
           <!-- Add blank tab due to Material bug, see https://github.com/angular/material/issues/5770 -->
           <md-tab ng-disabled="true">
             <md-tab-label>&nbsp;</md-tab-label>

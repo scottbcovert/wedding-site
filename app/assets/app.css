@@ -47,6 +47,23 @@ md-toolbar md-tab-item>span{
   font-weight: bold;
 }
 
+/* Ribbon Countdown Styling */
+
+.ribbon-container > .ribbon.ribbon_yellow {
+      z-index: 2;
+      border-top: 2px solid yellow;
+      border-bottom: 2px solid yellow;
+      color: yellow; }
+      .ribbon-container > .ribbon.ribbon_yellow::after {
+        border-color: yellow; }
+      .ribbon-container > .ribbon.ribbon_yellow::before {
+        border-color: yellow; }
+      .ribbon-container > .ribbon.ribbon_yellow > a {
+        color: yellow; }
+
+.ribbon-container > .ribbon.ribbon_hidden {
+      display: none; }
+
 /* End Custom Styling */
 
 html, body {

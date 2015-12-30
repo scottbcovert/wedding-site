@@ -3,6 +3,11 @@
 
     angular
         .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'home', 'story', 'wedding', 'registry', 'guestbook'])
+        .controller('CoreController', [
+            '$scope',
+            'ngCountdownRibbon',
+            CoreController
+        ])
         .config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', '$mdIconProvider', 
             function($stateProvider, $urlRouterProvider, $mdThemingProvider, $mdIconProvider){
                 
@@ -10,10 +15,7 @@
                 $urlRouterProvider
                     .when('#/home', 'home')
                     .when('#/story', 'story')
-                    .when('#/ceremony', 'ceremony')
-                    .when('#/reception', 'reception')
-                    .when('#/accommodations', 'accommodations')
-                    .when('#/weddingparty', 'weddingparty')
+                    .when('#/wedding', 'wedding')
                     .when('#/registry', 'registry')
                     .when('#/guestbook', 'guestbook')
                     .when('#/hashtag', 'hashtag')
@@ -23,30 +25,45 @@
                 $stateProvider
                     .state('home', {
                         url: '/',
+                        data: {
+                            'selectedTab' : 0
+                        },
                         templateUrl: './src/modules/home/views/home.html',
                         controller: 'HomeController',
                         controllerAs: 'hc'                        
                     })
                     .state('story', {
                         url: '/story',
+                        data: {
+                            'selectedTab' : 1
+                        },
                         templateUrl: './src/modules/story/views/story.html',
                         controller: 'StoryController',
                         controllerAs: 'sc'
                     })
                     .state('wedding', {
                         url: '/wedding',
+                        data: {
+                            'selectedTab' : 2
+                        },
                         templateUrl: './src/modules/wedding/views/wedding.html',
                         controller: 'WeddingController',
                         controllerAs: 'wc'
                     })
                     .state('registry', {
                         url: '/registry',
+                        data: {
+                            'selectedTab' : 3
+                        },
                         templateUrl: './src/modules/registry/views/registry.html',
                         controller: 'RegistryController',
                         controllerAs: 'rc'
                     })
                     .state('guestbook', {
                         url: '/guestbook',
+                        data: {
+                            'selectedTab' : 4
+                        },
                         templateUrl: './src/modules/guestbook/views/guestbook.html',
                         controller: 'GuestbookController',
                         controllerAs: 'gc'
@@ -88,5 +105,80 @@
 
             }
         ]);
+
+        /**
+        * Core Controller
+        * @constructor
+        */
+        function CoreController($scope, ngCountdownRibbon) {
+    
+            // Initialize header and nav tabs
+            var mainHeader = 'Lauren & Scott ❤ May 7, 2016',
+                navTabs = [
+                    {
+                        id: 'home',
+                        uisref: 'home',
+                        label: 'Home',
+                    },
+                    {
+                        id: 'story',
+                        uisref: 'story',
+                        label: 'Story',
+                    },
+                    {
+                        id: 'wedding',
+                        uisref: 'wedding',
+                        label: 'Wedding',
+                    },
+                    {
+                        id: 'registry',
+                        uisref: 'registry',
+                        label: 'Registry',
+                    },
+                    {
+                        id: 'guestbook',
+                        uisref: 'guestbook',
+                        label: 'Guestbook',
+                    },
+                    {
+                        id: 'hashtag',
+                        uisref: 'hashtag',
+                        label: 'Hashtag',
+                    },
+                ];
+
+            // Initialize countdown ribbon
+            var WEDDING_DAY = '2016-05-07',
+                RIBBON_POSITION = 'right',
+                RIBBON_YELLOW_THEME = 'yellow',
+                RIBBON_YELLOW_CLASS = 'ribbon_yellow',
+                RIBBON_HIDDEN_THEME = 'hidden',
+                RIBBON_HIDDEN_CLASS = 'ribbon_hidden',
+                todaysDate = new Date(),
+                weddingDateUTC = new Date(WEDDING_DAY),
+                weddingDate = new Date(weddingDateUTC.getTime() + weddingDateUTC.getTimezoneOffset()*60000),
+                ribbonTheme;
+
+            ngCountdownRibbon.addTheme(RIBBON_YELLOW_THEME,RIBBON_YELLOW_CLASS);
+            ngCountdownRibbon.addTheme(RIBBON_HIDDEN_THEME,RIBBON_HIDDEN_CLASS);
+            
+            if (weddingDate > todaysDate){
+              ribbonTheme = RIBBON_YELLOW_THEME;      
+            }
+            else {
+              ribbonTheme = RIBBON_HIDDEN_THEME; 
+            }
+
+            ngCountdownRibbon.set(WEDDING_DAY, '', {position:RIBBON_POSITION,theme:ribbonTheme});
+
+            var self = this;
+                self.mainHeader = mainHeader,
+                self.navTabs = navTabs;
+
+            // Set current tab when state changes to handle page refreshes/reloads
+            $scope.$on('$stateChangeSuccess', function(event, toState) {
+                self.currentTab = toState.data.selectedTab;
+            });
+        }
 
 })();
