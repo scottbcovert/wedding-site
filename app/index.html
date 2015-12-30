@@ -60,6 +60,10 @@
           <md-tab id="registry" class="md-tab-label" ui-sref="registry">Registry</md-tab>
           <md-tab id="guestbook" class="md-tab-label" ui-sref="guestbook">Guestbook</md-tab>           
           <md-tab id="hashtag" class="md-tab-label" ui-sref="hashtag">HASHTAG</md-tab>
+          <!-- Add blank tab due to Material bug, see https://github.com/angular/material/issues/5770 -->
+          <md-tab ng-disabled="true">
+            <md-tab-label>&nbsp;</md-tab-label>
+          </md-tab>
         </md-tabs>
     </md-toolbar>
 
