@@ -154,9 +154,8 @@
                 RIBBON_YELLOW_CLASS = 'ribbon_yellow',
                 RIBBON_HIDDEN_THEME = 'hidden',
                 RIBBON_HIDDEN_CLASS = 'ribbon_hidden',
-                todaysDate = new Date(),
-                weddingDateUTC = new Date(WEDDING_DAY),
-                weddingDate = new Date(weddingDateUTC.getTime() + weddingDateUTC.getTimezoneOffset()*60000),
+                todaysDate = new Date().setHours(0,0,0,0),
+                weddingDate = new Date(WEDDING_DAY),
                 ribbonTheme;
 
             ngCountdownRibbon.addTheme(RIBBON_YELLOW_THEME,RIBBON_YELLOW_CLASS);
