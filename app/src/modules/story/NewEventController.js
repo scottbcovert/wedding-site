@@ -48,8 +48,8 @@
 
 		      save = function() {
 		      	eventList.$add({
-		        	name: newEvent.name,
-		        	description: newEvent.description,
+		        	name: newEvent.name ? newEvent.name : null,
+		        	description: newEvent.description ? newEvent.description : null,
 		        	date: newEvent.date ? newEvent.date.toString() : null,
 		        	url: newEvent.url ? newEvent.url : null
 		        });

@@ -48,9 +48,9 @@
 
 		      save = function() {
 		      	postList.$add({
-		        	title: newPost.title,
-		        	message: newPost.message,
-		        	author: newPost.author,
+		        	title: newPost.title ? newPost.title : null,
+		        	message: newPost.message ? newPost.message : null,
+		        	author: newPost.author ? newPost.author : null,
 		        	url: newPost.url ? newPost.url : null,
 		        	date: (new Date()).toString()
 		        });
