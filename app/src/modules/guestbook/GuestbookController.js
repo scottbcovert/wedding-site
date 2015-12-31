@@ -55,7 +55,7 @@
 	  			tile.colspan = tile.rowspan = size;
 	  			// Add photo
 	  			if (p.url){
-	  				tile.image = '<img class="img-response md-card-guestbook-image" src="' + p.url + '"/>';
+	  				tile.image = '<img class="md-card-guestbook-image" src="' + p.url + '"/>';
 	  			}
 	  			posts.push(tile);
 	  		});
