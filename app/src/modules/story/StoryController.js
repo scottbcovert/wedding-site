@@ -60,7 +60,7 @@
 	  			};
 	  			// Add photo
 	  			if (e.url){
-	  				timelineEvent.titleContentHtml = '<img src="' + e.url + '"/>';
+	  				timelineEvent.titleContentHtml = '<img class="timeline-image" src="' + e.url + '"/>';
 	  			}
 	  			if (isEven(ctr)){
 	  				timelineEvent.badgeClass = 'danger';

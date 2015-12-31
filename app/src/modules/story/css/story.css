@@ -6,6 +6,11 @@ md-toast {
 
 /* Timeline Styling */
 
+.timeline-image {
+	width: 50%;
+	margin: auto;
+}
+
 .hidden {
   visibility: hidden;
 }
