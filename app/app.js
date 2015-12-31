@@ -18,7 +18,6 @@
                     .when('#/wedding', 'wedding')
                     .when('#/registry', 'registry')
                     .when('#/guestbook', 'guestbook')
-                    .when('#/hashtag', 'hashtag')
                     .otherwise('/');    
                 
                 // States
@@ -139,12 +138,7 @@
                         id: 'guestbook',
                         uisref: 'guestbook',
                         label: 'Guestbook',
-                    },
-                    {
-                        id: 'hashtag',
-                        uisref: 'hashtag',
-                        label: 'Hashtag',
-                    },
+                    }
                 ];
 
             // Initialize countdown ribbon
