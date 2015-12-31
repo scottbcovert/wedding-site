@@ -45,7 +45,7 @@
     			label: 'Sightseeing',
     			header: 'Things to Do',
     			imagePath: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSjhqDdbM0um7ruk1nKRYcKsnGnZXgHFyaMdRhNZSeGmDlhkzrJ',
-    			content: $sce.trustAsHtml('<p>By coming to our wedding you will already be visiting Bellevue State Park so you\'re off to a great start, but there are plenty of other sites to see during the weekend. We\'d recommend a trip to:<br/><br/><a target="_blank" href="http://www.nemoursmansion.org/">Nemours Mansion</a><br/><a target="_blank" href="http://www.delart.org/">Delaware Art Museum</a><br/><a target="_blank" href="http://longwoodgardens.org/">Longwood Gardens</a></p><p>Also while you\'re here don\'t forget to stop at <a target="_blank" href="http://www.woodsidefarmcreamery.com/">Woodside Farm Creamery</a> for some of that famous Delaware ice cream!</p>')
+    			content: $sce.trustAsHtml('<p>By coming to our wedding you will already be visiting Bellevue State Park so you\'re off to a great start, but there are plenty of other sites to see during the weekend. We\'d recommend a trip to:<br/><br/><a target="_blank" href="http://www.winterthur.org/">Winterthur</a><br/><a target="_blank" href="http://www.nemoursmansion.org/">Nemours Mansion</a><br/><a target="_blank" href="http://www.delart.org/">Delaware Art Museum</a><br/><a target="_blank" href="http://longwoodgardens.org/">Longwood Gardens</a></p><p>Also while you\'re here don\'t forget to stop at <a target="_blank" href="http://www.woodsidefarmcreamery.com/">Woodside Farm Creamery</a> for some of that famous Delaware ice cream!</p>')
     		},
     		{
     			label: 'Travel',
