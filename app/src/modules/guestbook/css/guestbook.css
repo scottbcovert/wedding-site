@@ -1,20 +1,4 @@
-md-grid-tile-header figcaption {
-  width: 100%; 
-}
-
-md-grid-tile-header figcaption h1 {  
-  text-align: center; 
-}
-
-.post-message {
-	color: whitesmoke;
-	font-size: 24px;
-}
-
-md-grid-tile-footer figcaption {
-  width: 100%; 
-}
-
-md-grid-tile-footer figcaption h2 {  
-  text-align: center; 
+.md-card-guestbook-image {
+	width: 50%;
+	margin: auto;
 }
