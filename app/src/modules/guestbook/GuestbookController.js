@@ -48,14 +48,17 @@
 	  			var tile = {
 	  				color: randomColor(),
 	  				title: p.title,
-	  				message: p.message,
-	  				author: p.author.startsWith('- ') || p.author.startsWith('-') ? p.author : '- ' + p.author
+	  				message: p.message
 	  			},
 	  			size = randomSpan();
 	  			tile.colspan = tile.rowspan = size;
 	  			// Add photo
 	  			if (p.url){
 	  				tile.image = '<img class="md-card-guestbook-image" src="' + p.url + '"/>';
+	  			}
+	  			// Add author
+	  			if (p.author){
+	  				tile.author = p.author.indexOf('-')===0 ? p.author : '- ' + p.author;
 	  			}
 	  			posts.push(tile);
 	  		});
