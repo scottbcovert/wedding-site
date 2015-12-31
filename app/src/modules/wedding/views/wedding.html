@@ -2,7 +2,7 @@
   
   <div class="margin-top-10" layout="row" layout-wrap layout-align="center start">
 	
-  	<div flex="60" flex-xs="100" layout="column">
+  	<div flex="90" flex-xs="100" layout="column" layout-align="center center">
       	<md-card>            	
           	<md-card-title>
           		<md-card-title-text>
@@ -32,70 +32,68 @@
 				</md-tab>
     		</md-tabs>
     	</md-card>
+    </div>    
+      	
+  	<div flex="55" flex-xs="100" layout="column">	      	
+      	<md-card>      
+          	<md-card-title>
+          		<md-card-title-text>
+            		<span class="md-headline">{{wc.travelHeader}}</span>            
+          		</md-card-title-text>
+     	    </md-card-title>	     	     	    
+        	<img src="{{wc.travelTabs[wc.travelIndex].imagePath}}" class="md-card-image {{wc.travelTabs[wc.travelIndex].imageClass}}" alt="{{wc.travelTabs[wc.travelIndex].header}}">
+        	<md-card-title>
+          		<md-card-title-text>
+            		<span class="md-headline">{{wc.travelTabs[wc.travelIndex].header}}</span>
+          		</md-card-title-text>
+        	</md-card-title>	        	
+        	<md-tabs md-dynamic-height md-selected="wc.travelIndex">
+		    	<md-tab ng-repeat="travelTab in wc.travelTabs">
+		    		<md-tab-label>{{travelTab.label}}</md-tab-label>
+		        	<md-tab-body>
+		          		<md-card-content>
+			          		<div layout="column" layout-align="center center" ng-bind-html="travelTab.content"/>
+		          		</md-card-content>
+		        	</md-tab-body>
+		      	</md-tab>
+		    	<!-- Add blank tab due to Material bug, see https://github.com/angular/material/issues/5770 -->
+    			<md-tab ng-disabled="true">
+				    <md-tab-label>&nbsp;</md-tab-label>
+				</md-tab>  			    
+		    </md-tabs>        	
+      	</md-card>
     </div>
 
-    <div flex="40" flex-xs="100" layout="column">
-      	
-      	<div flex="50" layout="column">
-	      	
-	      	<md-card>      
-	          	<md-card-title>
-	          		<md-card-title-text>
-	            		<span class="md-headline">{{wc.travelHeader}}</span>            
-	          		</md-card-title-text>
-	     	    </md-card-title>	     	     	    
-	        	<img src="{{wc.travelTabs[wc.travelIndex].imagePath}}" class="md-card-image {{wc.travelTabs[wc.travelIndex].imageClass}}" alt="{{wc.travelTabs[wc.travelIndex].header}}">
-	        	<md-card-title>
-	          		<md-card-title-text>
-	            		<span class="md-headline">{{wc.travelTabs[wc.travelIndex].header}}</span>
-	          		</md-card-title-text>
-	        	</md-card-title>	        	
-	        	<md-tabs md-dynamic-height md-selected="wc.travelIndex">
-			    	<md-tab ng-repeat="travelTab in wc.travelTabs">
-			    		<md-tab-label>{{travelTab.label}}</md-tab-label>
-			        	<md-tab-body>
-			          		<md-card-content>
-				          		<div layout="column" layout-align="center center" ng-bind-html="travelTab.content"/>
-			          		</md-card-content>
-			        	</md-tab-body>
-			      	</md-tab>
-			    	<!-- Add blank tab due to Material bug, see https://github.com/angular/material/issues/5770 -->
-	    			<md-tab ng-disabled="true">
-					    <md-tab-label>&nbsp;</md-tab-label>
-					</md-tab>  			    
-			    </md-tabs>        	
-	      	</md-card>
-
-	      	<md-card>      
-	          	<md-card-title>
-	          		<md-card-title-text>
-	            		<span class="md-headline">{{wc.weddingPartyHeader}}</span>            
-	          		</md-card-title-text>
-	     	    </md-card-title>	     	     	    
-	        	<img src="{{wc.wpTabs[wc.wpIndex].imagePath}}" class="md-card-image {{wc.wpTabs[wc.wpIndex].imageClass}}" alt="{{wc.wpTabs[wc.wpIndex].header}}">
-	        	<md-card-title>
-	          		<md-card-title-text>
-	            		<span class="md-headline">{{wc.wpTabs[wc.wpIndex].header}}</span>
-	            		<span class="md-subhead">{{wc.wpTabs[wc.wpIndex].subHeader}}</span>
-	          		</md-card-title-text>
-	        	</md-card-title>	        	
-	        	<md-tabs md-dynamic-height md-selected="wc.wpIndex">
-			    	<md-tab ng-repeat="wpTab in wc.wpTabs">
-			    		<md-tab-label>{{wpTab.label}}</md-tab-label>
-			        	<md-tab-body>
-			          		<md-card-content>
-				          		<div layout="column" layout-align="center center" ng-bind-html="wpTab.content"/>
-			          		</md-card-content>
-			        	</md-tab-body>
-			      	</md-tab>
-			    	<!-- Add blank tab due to Material bug, see https://github.com/angular/material/issues/5770 -->
-	    			<md-tab ng-disabled="true">
-					    <md-tab-label>&nbsp;</md-tab-label>
-					</md-tab>  			    
-			    </md-tabs>        	
-	      	</md-card>
-	      	
-	     </div>
+    <div flex="35" flex-xs="100" layout="column">
+      	<md-card>      
+          	<md-card-title>
+          		<md-card-title-text>
+            		<span class="md-headline">{{wc.weddingPartyHeader}}</span>            
+          		</md-card-title-text>
+     	    </md-card-title>	     	     	    
+        	<img src="{{wc.wpTabs[wc.wpIndex].imagePath}}" class="md-card-image {{wc.wpTabs[wc.wpIndex].imageClass}}" alt="{{wc.wpTabs[wc.wpIndex].header}}">
+        	<md-card-title>
+          		<md-card-title-text>
+            		<span class="md-headline">{{wc.wpTabs[wc.wpIndex].header}}</span>
+            		<span class="md-subhead">{{wc.wpTabs[wc.wpIndex].subHeader}}</span>
+          		</md-card-title-text>
+        	</md-card-title>	        	
+        	<md-tabs md-dynamic-height md-selected="wc.wpIndex">
+		    	<md-tab ng-repeat="wpTab in wc.wpTabs">
+		    		<md-tab-label>{{wpTab.label}}</md-tab-label>
+		        	<md-tab-body>
+		          		<md-card-content>
+			          		<div layout="column" layout-align="center center" ng-bind-html="wpTab.content"/>
+		          		</md-card-content>
+		        	</md-tab-body>
+		      	</md-tab>
+		    	<!-- Add blank tab due to Material bug, see https://github.com/angular/material/issues/5770 -->
+    			<md-tab ng-disabled="true">
+				    <md-tab-label>&nbsp;</md-tab-label>
+				</md-tab>  			    
+		    </md-tabs>        	
+      	</md-card>	      	
+     </div>
 
     </div>
 
