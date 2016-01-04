@@ -1,4 +1,17 @@
+.guestbook-post {
+	overflow: scroll;
+	margin: auto;
+}
+
 .md-card-guestbook-image {
 	width: 50%;
-	margin: auto;
+	margin: auto;	
+}
+
+.md-card-guestbook-image-container {
+	margin-left: 25%;
+}
+
+.md-card-guestbook-center {
+	text-align: center;
 }

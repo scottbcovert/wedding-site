@@ -30,8 +30,8 @@
 
   		postList = $firebaseArray(postRef),
 
-  		COLORS = ['#33ccff','#ffff00','#00ff00','#ff33cc','#ff9933','#ffffff','#ff3300','#9900cc','#6600ff','#009900'],
-  		//COLORS = ['blue','yellow','green','pink','orange','white','red','purple','darkpurple','darkgreen'],
+  		COLORS = ['#33ccff','#ffff00','#00ff00','#ff33cc','#ff9933','#ff3300','#9900cc','#6600ff','#009900'],
+  		//COLORS = ['blue','yellow','green','pink','orange','red','purple','darkpurple','darkgreen'],
 
   		randomColor = function() {
 			return COLORS[Math.floor(Math.random() * COLORS.length)];
@@ -41,10 +41,8 @@
 		    var r = Math.random();
 		    if (r < 0.8) {
 		      return 1;
-		    } else if (r < 1) {
-		      return 2;
 		    } else {
-		      return 3;
+		      return 2;
 		    }
 		},
 
@@ -69,7 +67,7 @@
 	  			tile.colspan = tile.rowspan = size;
 	  			// Add photo
 	  			if (p.url){
-	  				tile.image = '<img class="md-card-guestbook-image" src="' + p.url + '"/>';
+	  				tile.image = p.url;	  				
 	  			}
 	  			// Add author
 	  			if (p.author){

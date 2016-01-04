@@ -4,19 +4,25 @@
 	    <mfb-menu main-action="npc.newPostDialog($event)" position="br" effect="slidein" label="New Post" active-icon="create" resting-icon="add" toggling-method="hover" template-url="./src/modules/guestbook/views/mfb-menu.html"></mfb-menu>
 	</div>
 
-	<div class='md-padding' layout="row" layout-wrap md-cols-gt-md="6" md-cols-md="2" md-cols-sm="1" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-sm="4px" md-gutter="8px">
-        <md-card class="guestbook-post" ng-repeat="post in gc.posts" ng-style="{'background': post.color}" md-colspan-gt-sm="{{post.colspan}}" md-rowspan-gt-sm="{{post.rowspan}}">
-          <md-card-title>
-        		<md-card-title-text>
-          	  <span class="md-headline">{{post.title}}</span>            
-          	</md-card-title-text>
-   	      </md-card-title>
- 	        <md-card-content>
-            <div ng-if="post.image" ng-bind-html="post.image"></div>
-            <div>{{post.message}}</div>
-            <div class="md-subhead">{{post.author}}</div>	      	
-          </md-card-content>
+	<md-grid-list class='md-padding' layout="row" layout-wrap md-cols-gt-md="6" md-cols-md="2" md-cols-sm="1" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-sm="4px" md-gutter="8px">
+        <md-grid-tile class="guestbook-post" ng-repeat="post in gc.posts" md-colspan-gt-sm="{{post.colspan}}" md-rowspan-gt-sm="{{post.rowspan}}">
+          <md-card ng-style="{'background': post.color}" layout-fill layout="column" layout-align="center center">
+            <md-card-content layout-fill>
+              <md-content layout-fill>
+                <md-card-title>
+                  <md-card-title-text>
+                    <span class="md-card-guestbook-center md-headline">{{post.title}}</span>            
+                  </md-card-title-text>
+                </md-card-title>
+                <div flex="50" class="md-card-guestbook-image-container" layout-align="center center" ng-if="post.image">
+                  <img class="md-card-guestbook-image" src="{{post.image}}"/>              
+                </div>
+                <div class="md-padding">{{post.message}}</div>
+                <div class="md-card-guestbook-center md-subhead">{{post.author}}</div>	      	
+              </md-content>
+            </md-card-content>
           </md-card>
-    </div>
+        </md-grid-tile>
+    </md-grid-list>
 
 </div>
