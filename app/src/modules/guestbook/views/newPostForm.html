@@ -11,7 +11,7 @@
 				<md-input-container flex> <label>Author</label> <input ng-model="dc.newPost.author"> </md-input-container> 				
 			</div> 			
 			<div layout="row" layout-sm="column" class="layout-sm-column layout-row"> 
-				<input filepicker type="filepicker-dragdrop" data-fp-mimetype="image/*" data-fp-services="computer,facebook,instagram,url,box,GOOGLE_DRIVE,picasa,convert,webcam" on-success="dc.setUrl(event.fpfile.url)" data-fp-button-class="md-button md-raised md-ink-ripple" data-fp-drag-class="md-button event-drag-drop" data-fp-button-text="Attach Photo" data-fp-drag-text="Or Drag/Drop File Here" />
+				<input filepicker type="filepicker-dragdrop" data-fp-mimetype="image/*" data-fp-services="computer,facebook,instagram,url,box,GOOGLE_DRIVE,picasa,convert,webcam" on-success="dc.setUrl(event.fpfile.url)" data-fp-button-class="md-button md-raised md-ink-ripple" data-fp-drag-class="md-button event-drag-drop" data-fp-button-text="Attach Photo" data-fp-drag-text="Or Drag/Drop File Here" data-fp-image-quality="75" />
 			</div> 
 		</form> 
 	</md-content> 

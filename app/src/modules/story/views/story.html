@@ -15,7 +15,8 @@
 	          <p ng-if="event.when">
 	            <small class="text-muted"><i class="material-icons vmiddle grey-icon">watch_later</i>{{event.when}}</small>
 	          </p>
-	          <p ng-if="event.titleContentHtml" ng-bind-html="event.titleContentHtml">
+	          <p ng-if="event.imageUrl">
+	          	<img class="timeline-image" filepicker data-fp-src="{{event.imageUrl}}"/>
 	          </p>	
 	        </timeline-heading>
 	        <p>{{event.content}}</p>

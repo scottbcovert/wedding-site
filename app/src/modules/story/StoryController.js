@@ -60,12 +60,9 @@
 	  			var timelineEvent = {
 	  				title: e.name,
 	  				content: e.description,
+	  				imageUrl: e.url,
 	  				when: new Date(e.date).toLocaleDateString("en-US")
 	  			};
-	  			// Add photo
-	  			if (e.url){
-	  				timelineEvent.titleContentHtml = '<img class="timeline-image" src="' + e.url + '"/>';
-	  			}
 	  			if (isEven(ctr)){
 	  				timelineEvent.badgeClass = 'danger';
 	  				timelineEvent.badgeIcon = 'favorite';
