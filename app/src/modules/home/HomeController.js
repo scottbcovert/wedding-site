@@ -3,7 +3,6 @@
   angular
        .module('home')
        .controller('HomeController', [
-          '$firebaseArray',
           HomeController
        ]);
 
@@ -11,34 +10,39 @@
    * Home Controller
    * @constructor
    */
-  function HomeController($firebaseArray) {
+  function HomeController() {
     
     // Initialize image gallery
-    var picsRef = new Firebase(FIREBASE_URL+'gallerypics'),
+    var pics = [{}],
+        imageList = ['Engagement_Dinner.png',
+          'Engagement_Morning.png',
+          'Chicago.png',
+          'MP.png',
+          'NYE_PC.png',
+          'Peru_IceCream.png',
+          'Magnolias.png',
+          'Peru.png',
+          'VDay_Baltimore.png',
+          'NYE_TopGolf.jpg',
+          'Washington_Monument.png',
+          'Deep_Creek_Lake.png',
+          'Fletcher_Wedding.jpg',
+          'Halloween.png',
+          'Capalleja_Wedding.png'
+        ];
 
-      picsList = $firebaseArray(picsRef),
+    imageList.forEach(function(image) {
+      pics.push({
+        imageUrl : './assets/images/home/' + image
+      });
+    });
 
-      self = this;
+    // Add buffer to end of pics array
+    pics.push({});
 
-      picsList.$loaded()
-        .then(function() {
-
-          // Initialize pics with buffer
-          var pics = [{}];
-          
-          picsList.forEach(function(p){
-            var pic = {
-              imageUrl: p.url
-            };
-            pics.push(pic);
-          });
-
-          // Add buffer to end of pics array
-          pics.push({});
-          
-          self.pics = pics;
-        
-        });     
+    var self = this;
+    self.pics = pics;
+                
   }
 
 })();

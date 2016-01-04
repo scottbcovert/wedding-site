@@ -13,11 +13,10 @@
 	margin-right: 5%;
 }
 
-.md-card-image-shrink {
-	width: 50%;
-	margin: auto;
-}
-
 .md-tab-content-image {
 	width: 50% !important;
+}
+
+.md-tab-details-image {
+	max-height: 300px !important;
 }

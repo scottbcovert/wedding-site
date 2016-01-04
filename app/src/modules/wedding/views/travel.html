@@ -1,0 +1,37 @@
+<div flex id="content" tabIndex="-1" role="main">
+  
+  <div class="margin-top-10" layout="row" layout-wrap layout-align="center start">
+
+  	<div flex="75" flex-xs="100" layout="column">	      	
+      	<md-card>      
+          	<md-card-title>
+          		<md-card-title-text>
+            		<span class="md-headline">{{wc.travelHeader}}</span>            
+          		</md-card-title-text>
+     	    </md-card-title>	     	     	    
+        	<img ng-src="{{wc.travelTabs[wc.travelIndex].imagePath}}" class="md-card-image {{wc.travelTabs[wc.travelIndex].imageClass}}" alt="{{wc.travelTabs[wc.travelIndex].header}}">
+        	<md-card-title>
+          		<md-card-title-text>
+            		<span class="md-headline">{{wc.travelTabs[wc.travelIndex].header}}</span>
+          		</md-card-title-text>
+        	</md-card-title>	        	
+        	<md-tabs md-dynamic-height md-selected="wc.travelIndex">
+		    	<md-tab ng-repeat="travelTab in wc.travelTabs">
+		    		<md-tab-label>{{travelTab.label}}</md-tab-label>
+		        	<md-tab-body>
+		          		<md-card-content>
+			          		<div layout="column" layout-align="center center" ng-bind-html="travelTab.content"/>
+		          		</md-card-content>
+		        	</md-tab-body>
+		      	</md-tab>
+		    	<!-- Add blank tab due to Material bug, see https://github.com/angular/material/issues/5770 -->
+    			<md-tab ng-disabled="true">
+				    <md-tab-label>&nbsp;</md-tab-label>
+				</md-tab>  			    
+		    </md-tabs>        	
+      	</md-card>
+    </div>
+
+  </div>
+
+</div>

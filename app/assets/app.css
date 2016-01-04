@@ -11,21 +11,23 @@ md-whiteframe {
 /* Background Styling */
 
 .main-background {
-  background: url('./images/bg-pattern.png');
+  background: url('./images/main/bg-pattern.png');
   background-size: 20%
 }
 
 /* Toolbar Styling */
 
 md-toolbar.abstract-background {
-  background: url('./images/abstract-pattern.png');
+  background: #7f7f7f;
+  /* background: url('./images/main/abstract-pattern.png'); */
   /* #2ba3d4 = Complementary Blue */
   /* #29c2f4 = Light Blue from BG Pattern */
   color: white;
 }
 
 md-toolbar md-tabs-canvas {
-  background: url('./images/abstract-pattern.png');
+  background: #7f7f7f;
+  /* background: url('./images/main/abstract-pattern.png'); */
 }
 
 md-toolbar  md-tabs-canvas a {

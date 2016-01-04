@@ -5,6 +5,7 @@
         .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'home', 'story', 'wedding', 'registry', 'guestbook'])
         .controller('CoreController', [
             '$scope',
+            '$mdToast',
             'ngCountdownRibbon',
             CoreController
         ])
@@ -15,7 +16,9 @@
                 $urlRouterProvider
                     .when('#/home', 'home')
                     .when('#/story', 'story')
-                    .when('#/wedding', 'wedding')
+                    .when('#/details', 'details')
+                    .when('#/travel', 'travel')
+                    .when('#/weddingparty', 'weddingparty')
                     .when('#/registry', 'registry')
                     .when('#/guestbook', 'guestbook')
                     .otherwise('/');    
@@ -40,19 +43,37 @@
                         controller: 'StoryController',
                         controllerAs: 'sc'
                     })
-                    .state('wedding', {
-                        url: '/wedding',
+                    .state('details', {
+                        url: '/details',
                         data: {
                             'selectedTab' : 2
                         },
-                        templateUrl: './src/modules/wedding/views/wedding.html',
+                        templateUrl: './src/modules/wedding/views/details.html',
+                        controller: 'WeddingController',
+                        controllerAs: 'wc'
+                    })
+                    .state('travel', {
+                        url: '/travel',
+                        data: {
+                            'selectedTab' : 3
+                        },
+                        templateUrl: './src/modules/wedding/views/travel.html',
+                        controller: 'WeddingController',
+                        controllerAs: 'wc'
+                    })
+                    .state('weddingparty', {
+                        url: '/weddingparty',
+                        data: {
+                            'selectedTab' : 4
+                        },
+                        templateUrl: './src/modules/wedding/views/weddingparty.html',
                         controller: 'WeddingController',
                         controllerAs: 'wc'
                     })
                     .state('registry', {
                         url: '/registry',
                         data: {
-                            'selectedTab' : 3
+                            'selectedTab' : 5
                         },
                         templateUrl: './src/modules/registry/views/registry.html',
                         controller: 'RegistryController',
@@ -61,7 +82,7 @@
                     .state('guestbook', {
                         url: '/guestbook',
                         data: {
-                            'selectedTab' : 4
+                            'selectedTab' : 6
                         },
                         templateUrl: './src/modules/guestbook/views/guestbook.html',
                         controller: 'GuestbookController',
@@ -109,7 +130,7 @@
         * Core Controller
         * @constructor
         */
-        function CoreController($scope, ngCountdownRibbon) {
+        function CoreController($scope, $mdToast, ngCountdownRibbon) {
     
             // Initialize header and nav tabs
             var mainHeader = 'Lauren & Scott ❤ May 7, 2016',
@@ -125,9 +146,19 @@
                         label: 'Story',
                     },
                     {
-                        id: 'wedding',
-                        uisref: 'wedding',
-                        label: 'Wedding',
+                        id: 'details',
+                        uisref: 'details',
+                        label: 'Details',
+                    },
+                    {
+                        id: 'travel',
+                        uisref: 'travel',
+                        label: 'Travel',
+                    },
+                    {
+                        id: 'weddingparty',
+                        uisref: 'weddingparty',
+                        label: 'Wedding Party',
                     },
                     {
                         id: 'registry',
@@ -164,9 +195,16 @@
 
             ngCountdownRibbon.set(WEDDING_DAY, '', {position:RIBBON_POSITION,theme:ribbonTheme});
 
+            // Hide Toasts
+            var hideToast = function()
+            {
+                $mdToast.hide();
+            };
+
             var self = this;
                 self.mainHeader = mainHeader,
-                self.navTabs = navTabs;
+                self.navTabs = navTabs,
+                self.hideToast = hideToast;
 
             // Set current tab when state changes to handle page refreshes/reloads
             $scope.$on('$stateChangeSuccess', function(event, toState) {

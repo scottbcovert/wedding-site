@@ -52,7 +52,7 @@
           <h1>{{cc.mainHeader}}</h1>                      
         </div>      
         <md-tabs md-center-tabs="true" class="md-primary" md-selected="cc.currentTab">
-          <md-tab ng-repeat="navTab in cc.navTabs" id="{{navTab.id}}" class="md-tab-label" ui-sref="{{navTab.uisref}}">
+          <md-tab ng-click="cc.hideToast()" ng-repeat="navTab in cc.navTabs" id="{{navTab.id}}" class="md-tab-label" ui-sref="{{navTab.uisref}}">
             <md-tab-label>{{navTab.label}}</md-tab-label>
           </md-tab>
           <!-- Add blank tab due to Material bug, see https://github.com/angular/material/issues/5770 -->

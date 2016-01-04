@@ -4,6 +4,7 @@
        .module('story')
        .controller('StoryController', [
           '$firebaseArray',
+          '$timeout',
           '$mdToast',
           StoryController
        ]);
@@ -12,14 +13,17 @@
    * Story Controller
    * @constructor
    */
-  function StoryController($firebaseArray,$mdToast) {
+  function StoryController($firebaseArray,$timeout,$mdToast) {
     
     // Display toast to user
     var storyToast = $mdToast.simple()
     					.capsule(true)
     					.position('bottom right')
-    					.textContent('Help build our story by adding new events!');    
-    $mdToast.show(storyToast);
+    					.textContent('Help build our story by adding new events!')
+    					.action('Ok')
+    					.highlightAction(true)
+    					.hideDelay(0);
+    $timeout( function(){ $mdToast.show(storyToast); }, 500 );
     
     // Initialize event list
     var eventRef = new Firebase(FIREBASE_URL+'events'),

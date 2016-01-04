@@ -1,0 +1,34 @@
+<div flex id="content" tabIndex="-1" role="main">
+  
+  <div class="margin-top-10" layout="row" layout-wrap layout-align="center start">
+	
+  	<div flex="75" layout="row">
+      	
+        <md-card flex="50" ng-repeat="wpCard in wc.wpTabs">      
+        	<md-card-title>
+        		<md-card-title-text>
+          		<span class="md-headline">{{wpCard.label}}</span>   
+              <span class="md-subhead">{{wpCard.subHeader}}</span>         
+        		</md-card-title-text>
+     	    </md-card-title>	     	     	    
+        	<md-card-content>
+            <img ng-src="{{wpCard.imagePath}}" class="md-card-image {{wpCard.imageClass}}" alt="{{wpCard.header}}">
+            <md-tabs>
+              <md-tab label="{{wpCard.header}}">
+                <md-content class="md-padding">
+                  <div layout="column" layout-align="center center" ng-bind-html="wpCard.content"/>
+                </md-content>
+              </md-tab>
+              <!-- Add blank tab due to Material bug, see https://github.com/angular/material/issues/5770 -->
+              <md-tab ng-disabled="true">
+                <md-tab-label>&nbsp;</md-tab-label>
+              </md-tab>           
+            </md-tabs>            
+          </md-card-content>
+      	</md-card>	      	
+
+     </div>
+
+  </div>
+
+</div>
