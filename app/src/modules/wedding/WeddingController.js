@@ -43,21 +43,21 @@
     	travelTabs = [
     		{
     			label: 'Travel',
-    			header: 'PHL Airport / WIL Amtrak Station',
+    			header: 'PHL Airport & WIL Amtrak Station',
     			imagePath: './assets/images/travel/travel.png',
     			content: $sce.trustAsHtml('<p>For guests joining us from out of town (thank you!), <a target="_blank" href="https://www.google.com/flights/#search;t=PHL;d=2016-05-06;r=2016-05-08">PHL is the closest airport</a> at only 20 miles from downtown Wilmington.</p><p>For those coming by train, there is a <a target="_blank" href="https://www.amtrak.com/servlet/ContentServer?pagename=am/am2Station/Station_Page&code=WIL">Wilmington Amtrak station</a> on the Northeast Regional and Acela Express routes.</p>')
     		},
     		{
     			label: 'Lodging',
-    			header: 'Coming Soon!',
+    			header: 'Inn at Wilmington & DoubleTree Hotel',
     			imagePath: './assets/images/travel/hotel.png',
-    			content: $sce.trustAsHtml('<p>We will be reserving a room block at a nearby hotel, please check back soon for further details.</p>')
+    			content: $sce.trustAsHtml('<p>For your convenience we have reserved room blocks under the name <b>Covert-Tam Wedding</b> at the following hotels; please make your travel plans by <b>April 1st</b> for a discounted rate.</p><div class="layout-fill layout-row layout-padding layout-align-end-start"><div class="flex-50"><b><u>Inn at Wilmington</u></b><p>Rate: $109/night<br/>Phone: 302.478.6000<br/>Address: 4727 Concord Pike<br/>Wilmington, DE 19810<br/><i>Complimentary Hot Breakfast Buffet</i></p></div><div class="flex-50"><b><u>DoubleTree</u></b><p>Rate: $117/night<br/>Phone: 302.479.7900<br/>Address: 300 Rocky Run Pkwy<br/>Wilmington, DE 19803</p></div></div>')
     		},
         {
           label: 'Sightseeing',
           header: 'Things to Do',
           imagePath: './assets/images/travel/Wilmington.png',
-          content: $sce.trustAsHtml('<p>By coming to our wedding you will already be visiting Bellevue State Park so you\'re off to a great start, but there are plenty of other sites to see during the weekend. We\'d recommend a trip to:<br/><br/><a target="_blank" href="http://www.winterthur.org/">Winterthur</a><br/><a target="_blank" href="http://www.hagley.org/">Hagley</a><br/><a target="_blank" href="http://www.delart.org/">Delaware Art Museum</a><br/><a target="_blank" href="http://longwoodgardens.org/">Longwood Gardens</a><br/><a target="_blank" href="http://www.winterthur.org/?p=1055">Point-to-Point</a><br/><a href="http://wilmingtonflowermarket.org/">Flower Market</a></p>')
+          content: $sce.trustAsHtml('<p>By coming to our wedding you will already be visiting Bellevue State Park so you\'re off to a great start, but there are plenty of other sites to see during the weekend. We\'d recommend a trip to:<div class="md-padding"><a target="_blank" href="http://www.winterthur.org/">Winterthur</a><br/><a target="_blank" href="http://www.hagley.org/">Hagley</a><br/><a target="_blank" href="http://www.delart.org/">Delaware Art Museum</a><br/><a target="_blank" href="http://longwoodgardens.org/">Longwood Gardens</a><br/><a target="_blank" href="http://www.winterthur.org/?p=1055">Point-to-Point</a><br/><a href="http://wilmingtonflowermarket.org/">Flower Market</a></div></p>')
         }
     	],
     	wpTabs = [
