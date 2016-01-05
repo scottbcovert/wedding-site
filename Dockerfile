@@ -11,12 +11,12 @@ RUN useradd -ms /bin/bash dev
 # Set Work Directory
 WORKDIR /home
 
-# Setup user ownership
-RUN chown -R dev:dev /home
-
 # Add folders & files
 ADD app /home/app
 ADD package.json .bowerrc bower.json gulpfile.js /home/
+
+# Setup user ownership
+RUN chown -R dev:dev /home
 
 # Install Prerequisites
 RUN npm install -g bower gulp && \
