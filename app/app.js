@@ -169,6 +169,11 @@
                         id: 'guestbook',
                         uisref: 'guestbook',
                         label: 'Guestbook',
+                    },
+                    // Add blank tab due to Material bug, see https://github.com/angular/material/issues/5770
+                    {
+                        id: 'none',
+                        label: ''
                     }
                 ];
 
