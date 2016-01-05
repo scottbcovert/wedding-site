@@ -29,7 +29,7 @@
     		},
     		{
     			label: 'Reception',
-    			content: $sce.trustAsHtml('<p>Immediately after the ceremony we invite you to join us for a cocktail hour inside Bellevue Hall followed by dinner on the patio and dancing inside the mansion.</p> <div class="layout-row layout-margin layout-align-center-center"> <img class="flex-50 md-tab-details-image md-tab-content-image" src="./assets/images/details/Portico.jpg"/> <img class="flex-50 md-tab-details-image md-tab-content-image" src="./assets/images/details/TrophyRoom.jpeg"/> </div>')
+    			content: $sce.trustAsHtml('<p>Immediately after the ceremony we invite you to join us for a cocktail hour inside Bellevue Hall followed by dinner on the patio and dancing inside the mansion.</p> <div class="layout-row layout-margin layout-align-center-start"> <img class="flex-50 md-tab-details-image md-tab-content-image" src="./assets/images/details/Portico.jpg"/> <img class="flex-50 md-tab-details-image md-tab-content-image" src="./assets/images/details/TrophyRoom.jpeg"/> </div>')
     		},
     		{
     			label: 'Directions',

@@ -2,9 +2,9 @@
   
   <div class="margin-top-10" layout="row" layout-wrap layout-align="center start">
 	
-  	<div flex="75" layout="row">
+  	<div flex="75" layout="row" layout-sm="column" layout-xs="column">
       	
-        <md-card flex="50" ng-repeat="wpCard in wc.wpTabs">      
+        <md-card flex="50" flex-sm="100" flex-xs="100" ng-repeat="wpCard in wc.wpTabs">      
         	<md-card-title>
         		<md-card-title-text>
           		<span class="md-headline">{{wpCard.label}}</span>   
