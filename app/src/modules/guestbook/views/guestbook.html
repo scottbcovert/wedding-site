@@ -4,7 +4,7 @@
 	    <mfb-menu main-action="npc.newPostDialog($event)" position="br" effect="slidein" label="New Post" active-icon="create" resting-icon="add" toggling-method="hover" template-url="./src/modules/guestbook/views/mfb-menu.html"></mfb-menu>
 	</div>
 
-	<md-grid-list class='md-padding' layout="row" layout-wrap md-cols-gt-md="6" md-cols-md="2" md-cols-sm="1" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-sm="4px" md-gutter="8px">
+	<md-grid-list class='md-padding' layout="row" layout-wrap md-cols-gt-md="6" md-cols-md="2" md-cols-sm="1" md-cols-xs="1" md-row-height-gt-md="1:1" md-row-height-gt-xs="3:1" md-row-height-xs="2:1" md-gutter-gt-sm="4px" md-gutter="8px">
         <md-grid-tile class="guestbook-post" ng-repeat="post in gc.posts" md-colspan-gt-sm="{{post.colspan}}" md-rowspan-gt-sm="{{post.rowspan}}">
           <md-card ng-style="{'background': post.color}" layout-fill layout="column" layout-align="center center">
             <md-card-content layout-fill>

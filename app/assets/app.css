@@ -36,7 +36,7 @@ md-toolbar  md-tabs-canvas a {
 
 .md-toolbar-tools-spacer {
   display: flex;
-  height: 32px;
+  height: 24px;
 }
 
 .md-toolbar-header h1 {
@@ -50,6 +50,11 @@ md-toolbar md-tab-item>span{
 }
 
 /* Ribbon Countdown Styling */
+
+@media screen and (max-width:958px) {     
+.ribbon-container { 
+      display:none !important;     }  
+}
 
 .ribbon-container > .ribbon.ribbon_yellow {
       z-index: 2;

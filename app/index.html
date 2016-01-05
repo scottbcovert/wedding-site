@@ -47,10 +47,12 @@
 
     <!-- Toolbar -->
     <md-toolbar ng-controller="CoreController as cc" layout="column" class="abstract-background">
-        <span class="md-toolbar-tools-spacer"></span>
-        <div class="md-toolbar-tools md-toolbar-header" layout-align="center center">          
+        <span hide-xs class="md-toolbar-tools-spacer"></span>
+        <div hide-xs class="md-toolbar-tools md-toolbar-header" layout-align="center center">          
           <h1>{{cc.mainHeader}}</h1>                      
-        </div>      
+        </div>
+        <span hide-xs class="md-toolbar-tools-spacer"></span>
+        <h1 hide-gt-xs>❤</h1>                      
         <md-tabs md-center-tabs="true" class="md-primary" md-selected="cc.currentTab">
           <md-tab ng-click="cc.hideToast()" ng-repeat="navTab in cc.navTabs" id="{{navTab.id}}" class="md-tab-label" ui-sref="{{navTab.uisref}}">
             <md-tab-label>{{navTab.label}}</md-tab-label>
