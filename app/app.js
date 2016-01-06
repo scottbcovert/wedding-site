@@ -179,7 +179,7 @@
 
             // Initialize countdown ribbon
             var WEDDING_DAY = '2016-05-07',
-                RIBBON_POSITION = 'right',
+                RIBBON_POSITION = 'left',
                 RIBBON_YELLOW_THEME = 'yellow',
                 RIBBON_YELLOW_CLASS = 'ribbon_yellow',
                 RIBBON_HIDDEN_THEME = 'hidden',
