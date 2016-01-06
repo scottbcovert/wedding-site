@@ -57,7 +57,7 @@
           label: 'Sightseeing',
           header: 'Things to Do',
           imagePath: './assets/images/travel/Wilmington.jpg',
-          content: $sce.trustAsHtml('<p>By coming to our wedding you will already be visiting Bellevue State Park so you\'re off to a great start, but there are plenty of other sites to see during the weekend. We\'d recommend a trip to:<div class="md-padding"><a target="_blank" href="http://www.winterthur.org/">Winterthur</a><br/><a target="_blank" href="http://www.hagley.org/">Hagley</a><br/><a target="_blank" href="http://www.delart.org/">Delaware Art Museum</a><br/><a target="_blank" href="http://longwoodgardens.org/">Longwood Gardens</a><br/><a target="_blank" href="http://www.winterthur.org/?p=1055">Point-to-Point</a><br/><a href="http://wilmingtonflowermarket.org/">Flower Market</a></div></p>')
+          content: $sce.trustAsHtml('<p>By coming to our wedding you will already be visiting Bellevue State Park so you\'re off to a great start, but there are plenty of other sites to see during the weekend. We\'d recommend a trip to:<div class="md-padding"><a target="_blank" href="http://www.winterthur.org/">Winterthur</a><br/><a target="_blank" href="http://www.hagley.org/">Hagley</a><br/><a target="_blank" href="http://www.delart.org/">Delaware Art Museum</a><br/><a target="_blank" href="http://longwoodgardens.org/">Longwood Gardens</a><br/><a target="_blank" href="http://www.winterthur.org/?p=1055">Point-to-Point</a><br/><a target="_blank" href="http://wilmingtonflowermarket.org/">Flower Market</a></div></p>')
         }
     	],
     	wpTabs = [
