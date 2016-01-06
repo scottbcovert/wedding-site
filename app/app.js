@@ -138,41 +138,42 @@
                     {
                         id: 'home',
                         uisref: 'home',
-                        label: 'Home',
+                        label: 'Home'
                     },
                     {
                         id: 'story',
                         uisref: 'story',
-                        label: 'Story',
+                        label: 'Story'
                     },
                     {
                         id: 'details',
                         uisref: 'details',
-                        label: 'Details',
+                        label: 'Details'
                     },
                     {
                         id: 'travel',
                         uisref: 'travel',
-                        label: 'Travel',
+                        label: 'Travel'
                     },
                     {
                         id: 'weddingparty',
                         uisref: 'weddingparty',
-                        label: 'Wedding Party',
+                        label: 'Wedding Party'
                     },
                     {
                         id: 'registry',
                         uisref: 'registry',
-                        label: 'Registry',
+                        label: 'Registry'
                     },
                     {
                         id: 'guestbook',
                         uisref: 'guestbook',
-                        label: 'Guestbook',
+                        label: 'Guestbook'
                     },
                     // Add blank tab due to Material bug, see https://github.com/angular/material/issues/5770
                     {
-                        id: 'none',
+                        id: 'blank',
+                        uisref: 'home',
                         label: ''
                     }
                 ];
