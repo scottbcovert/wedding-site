@@ -55,7 +55,8 @@
     	postList.$watch(function() { 	  		
 	  		postList.sort(compare);
 	  		
-	  		var posts = [];
+	  		var posts = [],
+	  			OUR_SIGNATURE = 'Love, Lauren & Scott';
 	  		
 	  		postList.forEach(function(p){
 	  			var tile = {
@@ -65,6 +66,11 @@
 	  			},
 	  			size = randomSpan();
 	  			tile.colspan = tile.rowspan = size;
+	  			// Override tile size for our posts
+	  			if (p.author.indexOf(OUR_SIGNATURE)!=-1)
+	  			{
+	  				tile.colspan = tile.rowspan = 2;
+	  			}
 	  			// Add photo
 	  			if (p.url){
 	  				tile.image = p.url;	  				
