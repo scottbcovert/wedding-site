@@ -30,17 +30,7 @@
 
   		eventList = $firebaseArray(eventRef),
 
-  		animateElementIn = function($el) {
-		    $el.removeClass('hidden');
-		    $el.addClass('animated bounce-in'); // this example leverages animate.css classes
-	  	},
-
-	  	animateElementOut = function($el) {
-		    $el.addClass('hidden');
-		    $el.removeClass('animated bounce-in'); // this example leverages animate.css classes
-	  	},
-
-	  	compare = function(a,b) {
+  		compare = function(a,b) {
 			return new Date(a.date).getTime() - new Date(b.date).getTime();
 	  	},
 
@@ -49,9 +39,7 @@
 		};
 
 	  	self = this;
-    	self.animateElementIn = animateElementIn;
-    	self.animateElementOut = animateElementOut;     	
-
+    	
     	eventList.$watch(function() { 
 	  		eventList.sort(compare);
 	  		var ctr = 0,
