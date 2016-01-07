@@ -51,7 +51,7 @@
     			label: 'Lodging',
     			header: 'Inn at Wilmington & DoubleTree Hotel',
     			imagePath: './assets/images/travel/hotel.jpg',
-    			content: $sce.trustAsHtml('<p>For your convenience we have reserved room blocks under the name <b>Covert-Tam Wedding</b> at the following hotels; please make your travel plans by <b>April 1st</b> for a discounted rate.</p><div class="fill-across layout-row layout-padding layout-align-end-start"><div class="flex-50"><b><u>Inn at Wilmington</u></b><p>Rate: $109/night<br/>Phone: 302.478.6000<br/>Address: 4727 Concord Pike<br/>Wilmington, DE 19810<br/><i>Complimentary Hot Breakfast Buffet</i></p></div><div class="flex-50"><b><u>DoubleTree</u></b><p>Rate: $117/night<br/>Phone: 302.479.7900<br/>Address: 300 Rocky Run Pkwy<br/>Wilmington, DE 19803</p></div></div>')
+    			content: $sce.trustAsHtml('<p>For your convenience we have reserved room blocks under the name <b>Covert-Tam Wedding</b> at the following hotels; please make your travel plans by <b>April 1st</b> for a discounted rate.</p><div class="fill-across layout-row layout-padding layout-align-end-start"><div class="flex-50"><b><u>Inn at Wilmington (Marriott)</u></b><p>Rate: $109/night<br/>Phone: 302.479.7900<br/>Address: 300 Rocky Run Pkwy<br/>Wilmington, DE 19803<br/><i>Complimentary Hot Breakfast Buffet</i></p></div><div class="flex-50"><b><u>DoubleTree (Hilton)</u></b><p>Rate: $117/night<br/>Phone: 302.478.6000br/>Address: 4727 Concord Pike<br/>Wilmington, DE 19810</p></div></div>')
     		},
         {
           label: 'Sightseeing',
