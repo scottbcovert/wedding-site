@@ -5,15 +5,15 @@
   	<div flex="75" layout="row" layout-sm="column" layout-xs="column">
       	
         <md-card flex="50" flex-sm="100" flex-xs="100" ng-repeat="wpCard in wc.wpTabs">      
-        	<md-card-title>
-        		<md-card-title-text>
-          		<span class="md-headline">{{wpCard.label}}</span>   
-              <span class="md-subhead">{{wpCard.subHeader}}</span>         
-        		</md-card-title-text>
-     	    </md-card-title>	     	     	    
-        	<md-card-content>
+        	<md-card-content flex md-layout-fill>
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{wpCard.label}}</span>   
+                <span class="md-subhead">{{wpCard.subHeader}}</span>         
+              </md-card-title-text>
+            </md-card-title>
             <img ng-src="{{wpCard.imagePath}}" class="md-card-image {{wpCard.imageClass}}" alt="{{wpCard.header}}">
-            <md-tabs>
+            <md-tabs md-dynamic-height>
               <md-tab label="{{wpCard.header}}">
                 <md-content class="md-padding">
                   <div layout="column" layout-align="center center" ng-bind-html="wpCard.content"/>
