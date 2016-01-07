@@ -30,7 +30,7 @@ md-toolbar md-tabs-canvas {
   /* background: url('./images/main/abstract-pattern.png'); */
 }
 
-md-toolbar  md-tabs-canvas a {
+md-toolbar md-tabs-canvas a {
    font-weight: bold;
 }
 
@@ -47,6 +47,10 @@ md-toolbar  md-tabs-canvas a {
 md-toolbar md-tab-item>span{
   color: white;
   font-weight: bold;
+}
+
+md-toolbar md-tab-item:nth-last-child(3),md-tab-item:nth-last-child(2) {
+  display: none !important;
 }
 
 /* Ribbon Countdown Styling */
