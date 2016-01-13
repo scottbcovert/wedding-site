@@ -45,11 +45,12 @@
 	  		var ctr = 0,
 	  			events = [];
 	  		eventList.forEach(function(e){
-	  			var timelineEvent = {
+	  			var eventDate = new Date(e.date),
+	  				timelineEvent = {
 	  				title: e.name,
 	  				content: e.description,
 	  				imageUrl: e.url,
-	  				when: new Date(e.date).toLocaleDateString("en-US")
+	  				when: new Date(eventDate.getTime() + (eventDate.getTimezoneOffset() * 60000)).toLocaleDateString("en-US")
 	  			};
 	  			if (isEven(ctr)){
 	  				timelineEvent.badgeClass = 'danger';

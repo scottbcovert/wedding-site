@@ -50,7 +50,7 @@
 		      	eventList.$add({
 		        	name: newEvent.name ? newEvent.name : null,
 		        	description: newEvent.description ? newEvent.description : null,
-		        	date: newEvent.date ? newEvent.date.toString() : null,
+		        	date: newEvent.date ? new Date(newEvent.date.getTime() - (newEvent.date.getTimezoneOffset() * 60000)).toGMTString() : null,
 		        	url: newEvent.url ? newEvent.url : null
 		        });
 		        $mdDialog.cancel();
