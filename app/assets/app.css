@@ -2,7 +2,7 @@
 
 /* Fix md-tabs bug for mobile (https://github.com/angular/material/issues/4477) */
 
-md-content * { -webkit-transform: translate3d(0, 0, 0); } 
+md-tabs { -webkit-transform: translate3d(0, 0, 0); } 
 
 /* Page Card Header Styling */
 
