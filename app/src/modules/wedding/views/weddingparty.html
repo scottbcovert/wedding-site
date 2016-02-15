@@ -2,7 +2,7 @@
   
   <div class="margin-top-10" layout="row" layout-wrap layout-align="center start">
 	
-  	<div flex="75" layout="row" layout-sm="column" layout-xs="column">
+  	<div flex-gt-sm="75" flex="100" layout-gt-sm="row" layout="column">
       	
         <md-card ng-repeat="wpCard in wc.wpTabs">      
         	<md-card-content flex md-layout-fill>
@@ -18,11 +18,7 @@
                 <md-content class="md-padding">
                   <div layout="column" layout-align="center center" ng-bind-html="wpCard.content"/>
                 </md-content>
-              </md-tab>
-              <!-- Add blank tab due to Material bug, see https://github.com/angular/material/issues/5770 -->
-              <md-tab ng-disabled="true">
-                <md-tab-label>&nbsp;</md-tab-label>
-              </md-tab>           
+              </md-tab>              
             </md-tabs>            
           </md-card-content>
       	</md-card>	      	
