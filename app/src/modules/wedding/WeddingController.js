@@ -20,7 +20,7 @@
     var eventHeader = 'Event Details',
     	travelHeader = 'Travel & Accommodations',
     	weddingPartyHeader = 'Wedding Party',
-    	weddingTime = 'Saturday, May 7th, 2016',// at 4:30pm',
+    	weddingTime = 'Saturday, May 7th, 2016 at 5:00pm',
       bh = {
     		imagePath: './assets/images/details/Bellevue_Hall.jpg',
     		name: 'Bellevue Hall on ' + weddingTime,
