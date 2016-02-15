@@ -13,7 +13,8 @@
   function HomeController() {
     
     // Initialize image gallery
-    var pics = [{}],
+    var bufferedPics = [{}],
+        pics = [],
         imageList = ['Engagement_Dinner.png',
           'Engagement_Morning.png',
           'Chicago.png',
@@ -35,12 +36,16 @@
       pics.push({
         imageUrl : './assets/images/home/' + image
       });
+      bufferedPics.push({
+        imageUrl : './assets/images/home/' + image
+      });
     });
 
     // Add buffer to end of pics array
-    pics.push({});
+    bufferedPics.push({});
 
     var self = this;
+    self.bufferedPics = bufferedPics;
     self.pics = pics;
                 
   }

@@ -1,6 +1,12 @@
 <div flex id="content" layout="column" tabIndex="-1" role="main">
 
-<ks-swiper-container override-parameters="{'effect':'coverflow','observer':'true','observeParents':'true','autoplayDisableOnInteraction':'false'}" autoplay="3000" pagination-is-active="true" pagination-clickable="true" slides-per-view="3">
+<ks-swiper-container hide-sm hide-xs override-parameters="{'effect':'coverflow','observer':'true','observeParents':'true','autoplayDisableOnInteraction':'false'}" autoplay="3000" pagination-is-active="true" pagination-clickable="true" slides-per-view="3">
+    <ks-swiper-slide class="swiper-slide" ng-repeat="p in hc.bufferedPics">        
+        <img ng-src="{{p.imageUrl}}">        
+    </ks-swiper-slide>
+</ks-swiper-container>
+
+<ks-swiper-container hide-gt-sm override-parameters="{'effect':'coverflow','observer':'true','observeParents':'true','autoplayDisableOnInteraction':'false'}" autoplay="3000" pagination-is-active="true" pagination-clickable="true" slides-per-view="1">
     <ks-swiper-slide class="swiper-slide" ng-repeat="p in hc.pics">        
         <img ng-src="{{p.imageUrl}}">        
     </ks-swiper-slide>
