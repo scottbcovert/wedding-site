@@ -4,7 +4,7 @@
 	
   	<div flex="75" layout="row" layout-sm="column" layout-xs="column">
       	
-        <md-card flex="50" flex-sm="100" flex-xs="100" ng-repeat="wpCard in wc.wpTabs">      
+        <md-card ng-repeat="wpCard in wc.wpTabs">      
         	<md-card-content flex md-layout-fill>
             <md-card-title>
               <md-card-title-text>
@@ -13,7 +13,7 @@
               </md-card-title-text>
             </md-card-title>
             <img ng-src="{{wpCard.imagePath}}" class="md-card-image {{wpCard.imageClass}}" alt="{{wpCard.header}}">
-            <md-tabs md-dynamic-height>
+            <md-tabs md-dynamic-height md-no-pagination="true">
               <md-tab label="{{wpCard.header}}">
                 <md-content class="md-padding">
                   <div layout="column" layout-align="center center" ng-bind-html="wpCard.content"/>
