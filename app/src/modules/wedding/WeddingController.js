@@ -5,6 +5,10 @@
        .controller('WeddingController', [
           '$sce',
           WeddingController
+       ])
+       .directive('compileTemplate', [
+          '$compile', '$parse',
+          compileTemplate
        ]);
 
   /**
@@ -51,7 +55,7 @@
     			label: 'Lodging',
     			header: 'Inn at Wilmington & DoubleTree Hotel',
     			imagePath: './assets/images/travel/hotel.jpg',
-    			content: $sce.trustAsHtml('<p>For your convenience we have reserved room blocks under the name <b>Covert-Tam Wedding</b> at the following hotels; please make your travel plans by <b>April 1st</b> for a discounted rate.</p><div class="fill-across layout-row layout-padding layout-align-end-start"><div class="flex-50"><b><u>Inn at Wilmington (Marriott)</u></b><p><a target="_blank" href="https://bookings.ihotelier.com/bookings.jsp?groupID=1561464&hotelID=15279">Make a Reservation</a><br/>Rate: $109/night<br/>Phone: 302.479.7900<br/>Address: 300 Rocky Run Pkwy<br/>Wilmington, DE 19803<br/><i>Complimentary Hot Breakfast Buffet</i></p></div><div class="flex-50"><b><u>DoubleTree (Hilton)</u></b><p><a target="_blank" href="http://group.doubletree.com/CovertTamWedding">Make a Reservation</a><br/>Rate: $117/night<br/>Phone: 302.478.6000<br/>Address: 4727 Concord Pike<br/>Wilmington, DE 19810</p></div></div>')
+    			content: $sce.trustAsHtml('<p>For your convenience we have reserved room blocks under the name <b>Covert-Tam Wedding</b> at the following hotels; please make your travel plans by <b>April 1st</b> for a discounted rate.</p><div layout-gt-sm="row" class="fill-across layout-padding layout-align-end-start"><div flex-gt-sm="50"><b><u>Inn at Wilmington (Marriott)</u></b><p><a target="_blank" href="https://bookings.ihotelier.com/bookings.jsp?groupID=1561464&hotelID=15279">Make a Reservation</a><br/>Rate: $109/night<br/>Phone: 302.479.7900<br/>Address: 300 Rocky Run Pkwy<br/>Wilmington, DE 19803<br/><i>Complimentary Hot Breakfast Buffet</i></p></div><div flex-gt-sm="50"><b><u>DoubleTree (Hilton)</u></b><p><a target="_blank" href="http://group.doubletree.com/CovertTamWedding">Make a Reservation</a><br/>Rate: $117/night<br/>Phone: 302.478.6000<br/>Address: 4727 Concord Pike<br/>Wilmington, DE 19810</p></div></div>')
     		},
         {
           label: 'Sightseeing',
@@ -85,6 +89,22 @@
     	self.bhTabs = bhTabs,
     	self.travelTabs = travelTabs,
     	self.wpTabs = wpTabs;
+  }
+
+  /**
+   * compileTemplate Directive
+   */
+  function compileTemplate($compile, $parse) {
+    return {
+                link: function(scope, element, attr){
+                    var parsed = $parse(attr.ngBindHtml);
+                    function getStringValue() { return (parsed(scope) || '').toString(); }
+                    //Recompile if the template changes
+                    scope.$watch(getStringValue, function() {
+                        $compile(element, null, -9999)(scope);  //The -9999 makes it skip directives so that we do not recompile ourselves
+                    });
+                }         
+            }
   }
 
 })();
