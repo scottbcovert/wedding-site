@@ -163,7 +163,7 @@ md-button.menuBtn > md-icon {
 
 #content img {
   display: block;
-  height: auto;
+  height: auto !important;
   max-width: 500px;
 }
 
