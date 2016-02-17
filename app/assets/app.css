@@ -4,6 +4,11 @@
 
 md-tabs { -webkit-transform: translate3d(0, 0, 0); } 
 
+/* Fix md-errors-spacer visibility bug (https://github.com/angular/material/issues/6214) */
+md-input-container .md-errors-spacer {
+    min-height: 0;
+}
+
 /* Page Card Header Styling */
 
 md-whiteframe {
