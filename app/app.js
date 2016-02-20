@@ -2,7 +2,7 @@
   'use strict';
 
     angular
-        .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'home', 'story', 'wedding', 'registry', 'guestbook'])
+        .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'home', 'story', 'wedding', 'registry', 'guestbook', 'rsvp'])
         .controller('CoreController', [
             '$scope',
             '$mdToast',
@@ -21,6 +21,7 @@
                     .when('#/weddingparty', 'weddingparty')
                     .when('#/registry', 'registry')
                     .when('#/guestbook', 'guestbook')
+                    .when('#/rsvp', 'rsvp')
                     .otherwise('/');    
                 
                 // States
@@ -87,6 +88,15 @@
                         templateUrl: './src/modules/guestbook/views/guestbook.html',
                         controller: 'GuestbookController',
                         controllerAs: 'gc'
+                    })
+                    .state('rsvp', {
+                        url: '/rsvp',
+                        data: {
+                            'selectedTab' : 7
+                        },
+                        templateUrl: './src/modules/rsvp/views/rsvp.html',
+                        controller: 'RsvpController',
+                        controllerAs: 'rc'
                     });
 
                 $mdIconProvider
@@ -95,7 +105,9 @@
                     .icon("share"      , "./assets/svg/share.svg"                                                               , 24)
                     .icon("add"        , "./bower_components/material-design-icons/content/svg/production/ic_add_24px.svg"      , 24)
                     .icon("event"      , "./bower_components/material-design-icons/action/svg/production/ic_event_24px.svg"     , 24)
-                    .icon("create"      , "./bower_components/material-design-icons/content/svg/production/ic_create_24px.svg"  , 24)
+                    .icon("create"     , "./bower_components/material-design-icons/content/svg/production/ic_create_24px.svg"   , 24)
+                    .icon("people"     , "./bower_components/material-design-icons/social/svg/production/ic_people_24px.svg"    , 24)
+                    .icon("delete"     , "./bower_components/material-design-icons/content/svg/production/ic_clear_24px.svg"   , 24)
                     .icon("google_plus", "./assets/svg/google_plus.svg"                                                         , 512)
                     .icon("hangouts"   , "./assets/svg/hangouts.svg"                                                            , 512)
                     .icon("twitter"    , "./assets/svg/twitter.svg"                                                             , 512)
@@ -169,6 +181,11 @@
                         id: 'guestbook',
                         uisref: 'guestbook',
                         label: 'Guestbook'
+                    },
+                    {
+                        id: 'rsvp',
+                        uisref: 'rsvp',
+                        label: 'RSVP'
                     }
                 ];
 

@@ -1,0 +1,50 @@
+<div flex id="content" tabIndex="-1" role="main">
+  
+  <div class="margin-top-10" layout="row" layout-wrap layout-align="center start">
+
+  	<div flex="75" flex-xs="100" layout="column">	      	
+      	<md-card layout-align="center center">      
+          	<md-card-title>
+          		<md-card-title-text layout-align="center center">
+            		<span class="md-headline">{{rc.rsvpHeader}}</span>            
+          		</md-card-title-text>
+     	    </md-card-title>	     	     	    
+        	<img ng-src="{{rc.rsvpImage.imagePath}}" class="md-card-image {{rc.rsvpImage.imageClass}}" alt="{{rc.rsvpImage.imageName}}">        	
+      		<br/>
+        	<md-card-content class="md-padding" layout-padding>
+				<form name="rsvpForm" data-ng-repeat="rsvp in rc.rsvps track by $index">
+			      	<div layout="column" layout-gt-sm="row">
+						<md-input-container> <label>First Name</label> <input ng-model="rsvp.firstName"> </md-input-container>
+						<md-input-container> <label>Last Name</label> <input ng-model="rsvp.lastName"> </md-input-container>
+					</div>
+					<div layout="column" layout-gt-sm="row"> 
+						<md-switch ng-model="rsvp.response" ng-true-value="true" ng-false-value="false">
+							<div ng-show="rsvp.response">{{rc.rsvpResponse.accepts}}</div>
+							<div ng-show="!rsvp.response">{{rc.rsvpResponse.declines}}</div>
+						</md-switch>
+					</div>	
+					<md-button class="md-fab md-mini md-warn" aria-label="Remove" ng-show="!$first" ng-click="rc.removeRsvp($index)">
+			            <md-icon md-svg-icon="delete"/>
+			        </md-button>		      				      	
+			   	</form>
+			   	<div layout-align="end center" layout="row">
+					<md-button class="md-fab md-accent" aria-label="Add" ng-click="rc.addNewRsvp()">
+						<md-icon md-svg-icon="people"/>
+              		</md-button>
+				</div>
+				<div layout-align="space-around center" layout="column">
+					<div>Total Responses: {{rc.totalRsvps()}}</div>
+					<br/>
+					<div>Total Attending: {{rc.totalConfirmations()}}</div>
+				</div>
+				<div layout-align="end center" layout="row">
+					<md-button ng-click="rc.cancel()" class="md-raised md-ink-ripple"> Cancel </md-button> 
+					<md-button ng-click="rc.submit()" class="md-raised md-ink-ripple md-primary"> Submit </md-button> 
+				</div>				
+			</md-card-content> 
+      	</md-card>
+    </div>
+
+  </div>
+
+</div>
