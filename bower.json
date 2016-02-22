@@ -19,7 +19,8 @@
     "angularfire": "~1.1.3",
     "material-design-icons": "~2.1.1",
     "ng-countdown-ribbon": "git://github.com/scottbcovert/ng-countdown-ribbon#83340a746cb836d80381b2f5a2e36ad783b81001",
-    "ng-material-floating-button": "ng-mfb#~0.6.2"
+    "ng-material-floating-button": "ng-mfb#~0.6.2",
+    "ngSweetAlert": "angular-sweetalert#~1.1.0"
   },
   "devDependencies": {
     "angular-material": "https://github.com/angular/bower-material.git#master"
