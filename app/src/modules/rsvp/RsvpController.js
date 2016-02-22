@@ -4,7 +4,9 @@
        .module('rsvp')
        .controller('RsvpController', [
           '$firebaseArray',
-          '$mdDialog',
+          '$timeout',
+          '$mdToast',
+          'SweetAlert',
           RsvpController
        ]);
 
@@ -12,14 +14,22 @@
    * Rsvp Controller
    * @constructor
    */
-  function RsvpController($firebaseArray,$mdDialog) {
-    
+  function RsvpController($firebaseArray,$timeout,$mdToast,SweetAlert) {
+    // Display toast to user
+    var rsvpToast = $mdToast.simple()
+              .capsule(true)
+              .parent(angular.element(document.querySelector('#toastBounds')))
+              .position('top left')
+              .textContent('Add RSVPs for others in your party ==>')
+              .hideDelay(3000);
+    $timeout( function(){ $mdToast.show(rsvpToast); }, 500 );
+
     var rsvpRef = new Firebase(FIREBASE_URL+'rsvps'),
     	rsvpList = $firebaseArray(rsvpRef),
     	rsvpHeader = 'RSVP',
     	rsvpImage = {
-    		imagePath: './assets/images/rsvp/newlyweds.jpg',
-	    	imageName: 'Newlyweds',
+    		imagePath: './assets/images/rsvp/default.png',
+	    	imageName: 'RSVP',
 	    	imageClass: 'auto-max-300'
     	},
     	rsvpResponse = {
@@ -27,17 +37,10 @@
     		declines: 'Declines with Regret'
     	},
     	rsvps = [{response: true}],
-    	makeAlert = function(title,message) {
-	        return $mdDialog.alert()
-	          .title(title)
-	          .content(message)
-	          .clickOutsideToClose(true)
-	          .ok('Close');
-	    },
     	addNewRsvp = function() {
 		    var newItemNo = rsvps.length+1;
 		    rsvps.push({response:true});
-		},
+		  },
   		removeRsvp = function(index) {    
     		rsvps.splice(index,1);
   		}
@@ -81,7 +84,7 @@
 		    			if (counter === rsvps.length)
 		    			{
 		    				cancel();
-			    			$mdDialog.show(makeAlert('Success!','Your response was submitted, thank you!'));
+			    			SweetAlert.swal('Success!', 'Your response was submitted, thank you!', 'success');                
 		    			}
 		    		})
 		    	});
@@ -89,7 +92,7 @@
 		    else
 		    {
 		    	// Show error to user
-		    	$mdDialog.show(makeAlert('Oops!','Please make sure you\'ve entered all guests\' information'));
+		    	SweetAlert.swal('Oops!','Please make sure you\'ve entered all guests\' information', 'error');
 		    }
   		},
     	self = this;

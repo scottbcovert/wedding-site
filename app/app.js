@@ -2,7 +2,7 @@
   'use strict';
 
     angular
-        .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'home', 'story', 'wedding', 'registry', 'guestbook', 'rsvp'])
+        .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'oitozero.ngSweetAlert', 'home', 'story', 'wedding', 'registry', 'guestbook', 'rsvp'])
         .controller('CoreController', [
             '$scope',
             '$mdToast',
