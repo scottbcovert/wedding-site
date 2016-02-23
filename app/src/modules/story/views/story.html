@@ -16,7 +16,7 @@
 	            <small class="text-muted"><i class="material-icons vmiddle grey-icon">watch_later</i>{{event.when}}</small>
 	          </p>
 	          <p ng-if="event.imageUrl">
-	          	<img class="timeline-image" filepicker data-fp-src="{{event.imageUrl}}"/>
+	          	<img class="timeline-image" ng-src="{{event.imageUrl}}"/>
 	          </p>	
 	        </timeline-heading>
 	        <p>{{event.content}}</p>

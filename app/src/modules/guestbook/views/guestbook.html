@@ -15,7 +15,7 @@
                   </md-card-title-text>
                 </md-card-title>
                 <div flex="50" class="md-card-guestbook-image-container" layout-align="center center" ng-if="post.image">
-                  <img class="md-card-guestbook-image" filepicker data-fp-src="{{post.image}}"/>              
+                  <img class="md-card-guestbook-image" ng-src="{{post.image}}"/>              
                 </div>
                 <div class="md-padding">{{post.message}}</div>
                 <div class="md-card-guestbook-center md-subhead">{{post.author}}</div>	      	
