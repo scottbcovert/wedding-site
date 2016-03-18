@@ -11,7 +11,7 @@
     "angular-aria": "^1.4.6",
     "angular-filepicker": "~1.1.3",
     "angular-material": "^0.11.2",
-    "angular-material-data-table": "~0.9.14",
+    "angular-material-data-table": "git://github.com/scottbcovert/md-data-table#121ee65e53bd2ec76fc92550b3ee4906f96e6db4",
     "angular-sanitize": "~1.4.8",
     "angular-scroll-animate": "~0.9.8",
     "angular-swiper": "~0.3.2",
@@ -24,10 +24,9 @@
     "ngSweetAlert": "angular-sweetalert#~1.1.0"
   },
   "devDependencies": {
-    "angular-material": "https://github.com/angular/bower-material.git#master"
+    "angular-material": "https://github.com/angular/bower-material.git#e86a1192dadf64d00e3d3debcdb1a23c0f0d6d87"
   },
   "resolutions": {
-    "angular": "^1.4.6",
-    "angular-material": "master"
+    "angular": "^1.4.6"
   }
 }
