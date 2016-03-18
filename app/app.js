@@ -2,7 +2,11 @@
   'use strict';
 
     angular
-        .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'oitozero.ngSweetAlert', 'home', 'story', 'wedding', 'registry', 'guestbook', 'rsvp'])
+        .module('core', ['ui.router', 'ngMaterial', 'ngCountdownRibbon', 'oitozero.ngSweetAlert', 'md.data.table', 'home', 'story', 'wedding', 'registry', 'guestbook', 'rsvp', 'admin'])
+        .factory('AuthFactory', [
+            '$firebaseAuth',
+            AuthFactory
+        ])
         .controller('CoreController', [
             '$scope',
             '$mdToast',
@@ -22,6 +26,7 @@
                     .when('#/registry', 'registry')
                     .when('#/guestbook', 'guestbook')
                     .when('#/rsvp', 'rsvp')
+                    .when('#/admin', 'admin')
                     .otherwise('/');    
                 
                 // States
@@ -97,8 +102,23 @@
                         templateUrl: './src/modules/rsvp/views/rsvp.html',
                         controller: 'RsvpController',
                         controllerAs: 'rc'
+                    })
+                    .state('admin', {
+                        url: '/admin',
+                        data: {
+                            'selectedTab' : 0
+                        },
+                        templateUrl: './src/modules/admin/views/admin.html',
+                        controller: 'AdminController',
+                        controllerAs: 'ac',
+                        resolve: {
+                          // controller will not be loaded until $waitForAuth resolves
+                          'currentAuth': ['AuthFactory', function(AuthFactory) {
+                            return AuthFactory.$waitForAuth(); // $waitForAuth returns a promise so the resolve waits for it to complete
+                          }]
+                        }
                     });
-
+ 
                 $mdIconProvider
                     .defaultIconSet("./assets/svg/avatars.svg", 128)
                     .icon("menu"       , "./assets/svg/menu.svg"                                                                , 24)
@@ -137,6 +157,15 @@
 
             }
         ]);
+
+        /**
+        * Auth Factory
+        * @constructor
+        */
+        function AuthFactory($firebaseAuth) {
+            var ref = new Firebase(FIREBASE_URL);
+            return $firebaseAuth(ref);
+        }
 
         /**
         * Core Controller

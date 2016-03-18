@@ -1,0 +1,59 @@
+<div flex id="content" tabIndex="-1" role="main">
+  
+  <div class="margin-top-10" layout="row" layout-wrap layout-align="center start">
+
+  	<div flex="75" flex-xs="100" layout="column">	      	
+      	<md-card layout-align="{{ac.cardAlignment()}}">      
+          	<md-card-title>
+          		<md-card-title-text layout-align="center center">
+            		<span class="md-headline">{{ac.adminHeader()}}</span>            
+          		</md-card-title-text>
+     	    </md-card-title>	     	     	    
+        	<!-- Login -->
+        	<md-card-content ng-hide="ac.isAuthenticated()" class="md-padding" layout-padding>
+				<form name="loginForm">
+					<div layout-gt-sm="row" layout="column">
+						<md-input-container flex> <label>Username</label> <input ng-model="ac.loginData.username"> </md-input-container> 				
+					</div> 
+					<div layout-gt-sm="row" layout="column"> 
+						<md-input-container flex> <label>Password</label> <input ng-model="ac.loginData.password" type="password"> </md-input-container> 
+					</div>			
+				</form> 	
+				<div layout-align="end center" layout="row">
+					<md-button ng-click="ac.signin()" class="md-raised md-ink-ripple md-primary"> Sign In </md-button> 
+				</div>
+			</md-card-content> 
+			<!-- Dashboard -->
+        	<md-card-content ng-show="ac.isAuthenticated()" class="md-padding" layout-padding>
+				<div layout-align="space-around center" layout="column">
+					<div>Total Responses: {{ac.totalRsvps()}}</div>
+					<br/>
+					<div>Total Attending: {{ac.totalConfirmations()}}</div>
+					<br/>
+					<div>Total Regrets: {{ac.totalRegrets()}}</div>
+				</div>
+				<md-table-container>
+				  <table md-table>
+				    <thead md-head md-order="ac.sortOrder">
+				      <tr md-row>
+				        <th md-column md-order-by="['First Name']"><span>First Name</span></th>
+				        <th md-column md-order-by="['Last Name']"><span>Last Name</span></th>
+				        <th md-column md-order-by="['Response']">Attending?</th>
+				      </tr>
+				    </thead>
+				    <tbody md-body>
+				      <tr md-row ng-repeat="guest in ac.rsvpList() | orderBy: ac.sortOrder">
+				        <td md-cell>{{guest['First Name']}}</td>
+				        <td md-cell>{{guest['Last Name']}}</td>
+				        <td md-cell>{{guest['Response'] | AttendingFilter}}</td>        
+				      </tr>
+				    </tbody>
+				  </table>
+				</md-table-container>
+			</md-card-content> 
+      	</md-card>
+    </div>
+
+  </div>
+
+</div>
