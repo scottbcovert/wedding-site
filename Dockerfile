@@ -19,7 +19,7 @@ ADD package.json .bowerrc bower.json gulpfile.js /home/
 RUN chown -R dev:dev /home
 
 # Install Prerequisites
-RUN npm install -g bower gulp && \
+RUN npm install -g bower gulp phantomjs-prebuilt && \
 	npm install && \
 	bower install --config.interactive=false --allow-root
 
