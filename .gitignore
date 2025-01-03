@@ -6,4 +6,4 @@ tmp
 .DS_Store
 .idea
 app/jspm_packages
-app/config/env/local.js
+app/config/env/local.js.bkup
